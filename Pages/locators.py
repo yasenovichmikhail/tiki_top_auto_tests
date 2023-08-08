@@ -1,11 +1,14 @@
 from selenium.webdriver.common.by import By
 
+
 class BasePageLocators:
     SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
     HEADER_LOGO = (By.XPATH, "//a[@class='HeaderLogo_link__w6i5r']")
+    HEADER = (By.XPATH, "//div[@class='HeaderTopWrapper_topWrapper__wcGqJ']")
+    FOOTER = (By.XPATH, "//nav[@class='FooterNav_container__TNimz']")
 
 
-class HomePage:
+class HomePageLocators:
     MAKE_AN_ORDER_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed2__33NJf']")
     HOW_IT_WORKS_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 HeaderOffer_howItWorkButton__ajwBM']")
     GET_MORE_INFO_BUTTON1 = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed__y2rlJ LinkButton_sizeBig__7aVP_']")
@@ -19,16 +22,19 @@ class HomePage:
     ANY_QUESTIONS_CONTAINER = (By.XPATH, "//section[@class='container AnyQuestions_container__7229q']")
 
 
-class PricingPage:
+class PricingPageLocators:
+    pass
 
 
-class FaqPage:
+class FaqPageLocators:
+    pass
 
 
-class ContactUsPage:
+class ContactUsPageLocators:
+    pass
 
 
-class LoginPage:
+class LoginPageLocators:
     """Locators"""
     SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
 
