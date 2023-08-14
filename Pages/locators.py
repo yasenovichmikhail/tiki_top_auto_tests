@@ -6,6 +6,7 @@ class BasePageLocators:
     HEADER_LOGO = (By.XPATH, "//a[@class='HeaderLogo_link__w6i5r']")
     HEADER = (By.XPATH, "//div[@class='HeaderTopWrapper_topWrapper__wcGqJ']")
     FOOTER = (By.XPATH, "//nav[@class='FooterNav_container__TNimz']")
+    GET_FREE_VIEWS = (By.XPATH, "//div[@class='HeaderBottomWrapper_bottomWrapper__w2dKr']")
 
 
 class HomePageLocators:
@@ -17,6 +18,7 @@ class HomePageLocators:
     ANY_QUESTIONS_CONTACT_US_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorWhiteWithBorder__zLVqH']")
     BOOST_YOUR_TIKTOK_PROFILE_CONTAINER = (By.XPATH, "//section[@class='container HeaderOffer_headerOffer__0Nk4c']")
     WHAT_DO_WE_OFFER_CONTAINER = (By.XPATH, "//section[@class='container'][1]")
+    WHAT_WE_HAVE_ALREADY_DONE_CONTAINER = (By.XPATH, "//section[@class='container DoneOrders_container__aI7tA']")
     PROMOTION_FORMATS_CONTAINER = (By.XPATH, "//section[@class='container'][2]")
     OUR_CLIENTS_TRUST_US_CONTAINER = (By.XPATH, "//section[@class='container OurClients_container__rlkMW']")
     ANY_QUESTIONS_CONTAINER = (By.XPATH, "//section[@class='container AnyQuestions_container__7229q']")
@@ -35,13 +37,8 @@ class ContactUsPageLocators:
 
 
 class LoginPageLocators:
-    """Locators"""
     SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
-
     LOGIN_TAB = (By.XPATH, "//div[@class='AuthorizationTypeItem_item__2IwVY'][2]")
-
     INPUT_EMAIL = (By.ID, "authorizationEmail")
-
     INPUT_PASSWORD = (By.ID, "authorizationPassword")
-
     LOGIN_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")

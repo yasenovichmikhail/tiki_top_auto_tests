@@ -47,5 +47,8 @@ class BasePage:
         assert self.is_element_present(*BasePageLocators.FOOTER), "Footer is not presented"
 
     def is_header_logo_visible(self):
-        logo = self.is_element_present(*BasePageLocators.HEADER_LOGO)
-        assert logo, "Header logo is not presented"
+        assert self.is_element_present(*BasePageLocators.HEADER_LOGO), "Header logo is not presented"
+
+    def is_get_free_views_visible(self):
+        assert self.is_element_present(*BasePageLocators.GET_FREE_VIEWS), "Get free views is not presented"
+

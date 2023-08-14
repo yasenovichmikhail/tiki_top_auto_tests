@@ -32,3 +32,28 @@ class TestHome(BaseTest):
         page = BasePage(self.driver)
         page.is_footer_visible()
 
+    def test_guest_can_see_get_free_views(self):
+        page = BasePage(self.driver)
+        page.is_get_free_views_visible()
+
+    def test_guest_can_see_what_do_we_offer_section(self):
+        page = HomePage(self.driver)
+        page.is_what_do_we_offer_container_presented()
+
+    def test_guest_can_see_what_we_have_already_done_section(self):
+        page = HomePage(self.driver)
+        page.is_what_we_have_already_done_container_presented()
+
+    def test_guest_can_see_promotion_formats_section(self):
+        page = HomePage(self.driver)
+        page.is_promotion_formats_container_presented()
+
+    def test_guest_can_see_our_clients_trust_us_section(self):
+        page = HomePage(self.driver)
+        page.is_our_clients_trust_us_container_presented()
+
+    def test_guest_can_see_any_questions_section(self):
+        page = HomePage(self.driver)
+        page.is_any_questions_container_presented()
+
+
