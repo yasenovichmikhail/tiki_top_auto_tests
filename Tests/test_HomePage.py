@@ -64,4 +64,48 @@ class TestHome(BaseTest):
         page = HomePage(self.driver)
         page.is_any_questions_container_presented()
 
+    def test_user_can_go_to_pricing_page_from_header_link(self):
+        page = HomePage(self.driver)
+        page.go_to_pricing_page_from_header_link()
+
+    def test_user_can_go_to_faq_page_from_header_link(self):
+        page = HomePage(self.driver)
+        page.go_to_faq_page_from_header_link()
+
+    def test_user_can_go_to_contact_us_page_from_header_link(self):
+        page = HomePage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+
+    def test_user_can_go_to_pricing_page_from_footer_link(self):
+        page = HomePage(self.driver)
+        page.go_to_pricing_page_from_footer_link()
+
+    def test_user_can_go_to_faq_page_from_footer_link(self):
+        page = HomePage(self.driver)
+        page.go_to_faq_page_from_footer_link()
+
+    def test_user_can_go_to_contact_us_page_from_footer_link(self):
+        page = HomePage(self.driver)
+        page.go_to_contact_us_page_from_footer_link()
+
+    def test_user_can_go_to_pricing_page_from_boost_your_profile_section(self):
+        page = HomePage(self.driver)
+        page.go_to_pricing_page_from_boost_your_profile_section()
+
+    def test_user_can_go_to_pricing_page_from_what_do_we_offer_section(self):
+        page = HomePage(self.driver)
+        page.go_to_pricing_page_from_what_do_we_offer_section()
+
+    def test_user_can_go_to_pricing_page_from_promotion_formats_section(self):
+        page = HomePage(self.driver)
+        page.go_to_pricing_page_from_promotion_formats_section()
+
+    def test_user_can_go_to_faq_page_from_any_questions_section(self):
+        page = HomePage(self.driver)
+        page.go_to_faq_page_from_any_questions_section()
+
+    def test_user_can_go_to_contact_us_page_from_any_questions_section(self):
+        page = HomePage(self.driver)
+        page.go_to_contact_us_page_from_any_questions_section()
+
 

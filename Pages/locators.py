@@ -7,10 +7,17 @@ class BasePageLocators:
     HEADER = (By.XPATH, "//div[@class='HeaderTopWrapper_topWrapper__wcGqJ']")
     FOOTER = (By.XPATH, "//nav[@class='FooterNav_container__TNimz']")
     GET_FREE_VIEWS = (By.XPATH, "//div[@class='HeaderBottomWrapper_bottomWrapper__w2dKr']")
-    # HOME_LINK_HEADER = (By.LINK_TEXT, "Home")
-    # PRICING_LINK_HEADER = (By.LINK_TEXT, "Pricing")
-    # FAQ_LINK_HEADER = (By.LINK_TEXT, "Home")
-    # CONTACT_US_LINK_HEADER = (By.LINK_TEXT, "Home")
+    HOME_LINK_HEADER = (By.XPATH, "//div//header//ul//li[1]")
+    PRICING_LINK_HEADER = (By.XPATH, "//div//header//ul//li[2]")
+    FAQ_LINK_HEADER = (By.XPATH, "//div//header//ul//li[3]")
+    CONTACT_US_LINK_HEADER = (By.XPATH, "//div//header//ul//li[4]")
+    LEARN_LINK_HEADER = (By.XPATH, "//div//header//ul//li[5]")
+    HOME_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[1]")
+    PRICING_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[2]")
+    FAQ_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[3]")
+    CONTACT_US_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[4]")
+    LEARN_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[5]")
+
 
 class HomePageLocators:
     MAKE_AN_ORDER_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed2__33NJf']")

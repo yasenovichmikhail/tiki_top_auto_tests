@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 from Config.config import TestData
@@ -80,3 +82,91 @@ class HomePage(BasePage):
                                                                                    "section is not presented"
         assert actual_header == expected_header, f"expected {expected_header}, got {actual_header}"
         assert actual_description == expected_description, f"expected {expected_description}, got {actual_description}"
+
+    def go_to_pricing_page_from_header_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_HEADER)
+        expected_link_name = "Pricing"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.PRICING_LINK_HEADER)
+        title = self.get_title()
+        assert title == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
+
+    def go_to_faq_page_from_header_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.FAQ_LINK_HEADER)
+        expected_link_name = "FAQ"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.FAQ_LINK_HEADER)
+        title = self.get_title()
+        assert title == TestData.FAQ_PAGE_TITLE, "Title of the FAQ page doesn't match"
+
+    def go_to_contact_us_page_from_header_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.CONTACT_US_LINK_HEADER)
+        expected_link_name = "Contact Us"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.CONTACT_US_LINK_HEADER)
+        title = self.get_title()
+        assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
+
+    def go_to_pricing_page_from_footer_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_FOOTER)
+        expected_link_name = "Pricing"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.PRICING_LINK_FOOTER)
+        title = self.get_title()
+        assert title == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
+
+    def go_to_faq_page_from_footer_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.FAQ_LINK_FOOTER)
+        expected_link_name = "FAQ"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.FAQ_LINK_FOOTER)
+        title = self.get_title()
+        assert title == TestData.FAQ_PAGE_TITLE, "Title of the FAQ page doesn't match"
+
+    def go_to_contact_us_page_from_footer_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.CONTACT_US_LINK_FOOTER)
+        expected_link_name = "Contact Us"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.CONTACT_US_LINK_FOOTER)
+        title = self.get_title()
+        assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
+
+    def go_to_pricing_page_from_boost_your_profile_section(self):
+        actual_button_name = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
+        expected_button_name = "Make an order"
+        assert actual_button_name == expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
+        self.click(HomePageLocators.MAKE_AN_ORDER_BUTTON)
+        assert self.get_title() == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
+
+    def go_to_pricing_page_from_what_do_we_offer_section(self):
+        actual_button_name = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON)
+        expected_button_name = "Get more info"
+        assert actual_button_name in expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
+        self.click(HomePageLocators.WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON)
+        assert self.get_title() == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
+
+    def go_to_pricing_page_from_promotion_formats_section(self):
+        actual_button_name = self.get_element_text(HomePageLocators.PROMOTION_FORMATS_GET_MORE_INFO_BUTTON)
+        expected_button_name = "Get more info"
+        assert actual_button_name == expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
+        self.click(HomePageLocators.PROMOTION_FORMATS_GET_MORE_INFO_BUTTON)
+        assert self.get_title() == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
+
+    def go_to_faq_page_from_any_questions_section(self):
+        actual_button_name = self.get_element_text(HomePageLocators.ANY_QUESTIONS_MORE_INFO_BUTTON)
+        expected_button_name = "More info"
+        assert actual_button_name == expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
+        self.click(HomePageLocators.ANY_QUESTIONS_MORE_INFO_BUTTON)
+        assert self.get_title() == TestData.FAQ_PAGE_TITLE, "Title of the FAQ page doesn't match"
+
+    def go_to_contact_us_page_from_any_questions_section(self):
+        actual_button_name = self.get_element_text(HomePageLocators.ANY_QUESTIONS_CONTACT_US_BUTTON)
+        expected_button_name = "Contact us"
+        assert actual_button_name == expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
+        self.click(HomePageLocators.ANY_QUESTIONS_CONTACT_US_BUTTON)
+        assert self.get_title() == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact us page doesn't match"
+
+    def scroll_to_the_object(self):
+        self.scroll(*HomePageLocators.ANY_QUESTIONS_CONTAINER)
+
+

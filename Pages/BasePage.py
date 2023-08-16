@@ -1,7 +1,8 @@
 from selenium.common import NoSuchElementException
-from selenium.webdriver import ActionChains
+from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 from Config.config import TestData
 from Pages.locators import BasePageLocators
@@ -36,6 +37,28 @@ class BasePage:
 
     def get_title(self):
         return self.driver.title
+
+    def go_back(self):
+        self.driver.back()
+
+    def refresh(self):
+        self.driver.refresh()
+
+    def screenshot(self, file_name='screenshot.png'):
+        self.driver.save_screenshot(file_name)
+
+    def get_current_url(self):
+        return self.driver.current_url
+
+    def switch_to_iframe(self, iframe):
+        self.driver.switch_to.frame(iframe)
+
+    def switch_out_iframe(self):
+        self.driver.switch_to.default_content()
+
+    def scroll(self, how, what):
+        element = self.driver.find_element(how, what)
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def is_signup_button_exist(self):
         assert self.is_element_present(*BasePageLocators.SIGNUP_BUTTON), "Sign Up button is not presented"
