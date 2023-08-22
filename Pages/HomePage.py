@@ -83,54 +83,6 @@ class HomePage(BasePage):
         assert actual_header == expected_header, f"expected {expected_header}, got {actual_header}"
         assert actual_description == expected_description, f"expected {expected_description}, got {actual_description}"
 
-    def go_to_pricing_page_from_header_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_HEADER)
-        expected_link_name = "Pricing"
-        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.PRICING_LINK_HEADER)
-        title = self.get_title()
-        assert title == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
-
-    def go_to_faq_page_from_header_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.FAQ_LINK_HEADER)
-        expected_link_name = "FAQ"
-        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.FAQ_LINK_HEADER)
-        title = self.get_title()
-        assert title == TestData.FAQ_PAGE_TITLE, "Title of the FAQ page doesn't match"
-
-    def go_to_contact_us_page_from_header_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.CONTACT_US_LINK_HEADER)
-        expected_link_name = "Contact Us"
-        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.CONTACT_US_LINK_HEADER)
-        title = self.get_title()
-        assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
-
-    def go_to_pricing_page_from_footer_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_FOOTER)
-        expected_link_name = "Pricing"
-        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.PRICING_LINK_FOOTER)
-        title = self.get_title()
-        assert title == TestData.PRICING_PAGE_TITLE, "Title of the Pricing page doesn't match"
-
-    def go_to_faq_page_from_footer_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.FAQ_LINK_FOOTER)
-        expected_link_name = "FAQ"
-        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.FAQ_LINK_FOOTER)
-        title = self.get_title()
-        assert title == TestData.FAQ_PAGE_TITLE, "Title of the FAQ page doesn't match"
-
-    def go_to_contact_us_page_from_footer_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.CONTACT_US_LINK_FOOTER)
-        expected_link_name = "Contact Us"
-        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.CONTACT_US_LINK_FOOTER)
-        title = self.get_title()
-        assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
-
     def go_to_pricing_page_from_boost_your_profile_section(self):
         actual_button_name = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
         expected_button_name = "Make an order"

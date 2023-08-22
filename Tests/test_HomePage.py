@@ -16,11 +16,11 @@ class TestHome(BaseTest):
         page = HomePage(self.driver)
         page.check_home_page_title()
 
-    def test_guest_can_see_header_logo(self):
+    def test_guest_can_see_header_logo_from_home_page(self):
         page = BasePage(self.driver)
         page.is_header_logo_visible()
 
-    def test_guest_can_see_header(self):
+    def test_guest_can_see_header_from_home_page(self):
         page = BasePage(self.driver)
         page.is_header_visible()
 
@@ -36,11 +36,11 @@ class TestHome(BaseTest):
         page = HomePage(self.driver)
         page.is_boost_your_profile_container_presented()
 
-    def test_guest_can_see_footer(self):
+    def test_guest_can_see_footer_from_home_page(self):
         page = BasePage(self.driver)
         page.is_footer_visible()
 
-    def test_guest_can_see_get_free_views(self):
+    def test_guest_can_see_get_free_views_from_home_page(self):
         page = BasePage(self.driver)
         page.is_get_free_views_visible()
 
@@ -65,27 +65,27 @@ class TestHome(BaseTest):
         page.is_any_questions_container_presented()
 
     def test_user_can_go_to_pricing_page_from_header_link(self):
-        page = HomePage(self.driver)
+        page = BasePage(self.driver)
         page.go_to_pricing_page_from_header_link()
 
     def test_user_can_go_to_faq_page_from_header_link(self):
-        page = HomePage(self.driver)
+        page = BasePage(self.driver)
         page.go_to_faq_page_from_header_link()
 
     def test_user_can_go_to_contact_us_page_from_header_link(self):
-        page = HomePage(self.driver)
+        page = BasePage(self.driver)
         page.go_to_contact_us_page_from_header_link()
 
     def test_user_can_go_to_pricing_page_from_footer_link(self):
-        page = HomePage(self.driver)
+        page = BasePage(self.driver)
         page.go_to_pricing_page_from_footer_link()
 
     def test_user_can_go_to_faq_page_from_footer_link(self):
-        page = HomePage(self.driver)
+        page = BasePage(self.driver)
         page.go_to_faq_page_from_footer_link()
 
     def test_user_can_go_to_contact_us_page_from_footer_link(self):
-        page = HomePage(self.driver)
+        page = BasePage(self.driver)
         page.go_to_contact_us_page_from_footer_link()
 
     def test_user_can_go_to_pricing_page_from_boost_your_profile_section(self):

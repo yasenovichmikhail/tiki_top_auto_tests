@@ -51,8 +51,10 @@ class PricingPageLocators:
 
 
 class FaqPageLocators:
-    pass
-
+    POPULAR_QUESTIONS_CONTAINER = (By.XPATH, "//div[@class='FaqInfo_questionsContainer__20GJ_']")
+    POPULAR_QUESTIONS_HEADER = (By.XPATH, "//h1[@class='FaqInfo_title__qU5w9']")
+    FIRST_QUESTIONS_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][1]")
+    FIRST_QUESTIONS_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][1]//details/p")
 
 class ContactUsPageLocators:
     pass
