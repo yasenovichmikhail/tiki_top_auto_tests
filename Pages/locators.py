@@ -46,6 +46,7 @@ class HomePageLocators:
     ANY_QUESTIONS_CONTACT_US_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorWhiteWithBorder_"
                                                  "_zLVqH']")
 
+
 class PricingPageLocators:
     pass
 
@@ -53,8 +54,23 @@ class PricingPageLocators:
 class FaqPageLocators:
     POPULAR_QUESTIONS_CONTAINER = (By.XPATH, "//div[@class='FaqInfo_questionsContainer__20GJ_']")
     POPULAR_QUESTIONS_HEADER = (By.XPATH, "//h1[@class='FaqInfo_title__qU5w9']")
-    FIRST_QUESTIONS_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][1]")
-    FIRST_QUESTIONS_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][1]//details/p")
+    FIRST_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][1]//details//summary")
+    FIRST_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][1]//details/p")
+    SECOND_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][2]//details//summary")
+    SECOND_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][2]//details/p")
+    THIRD_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][3]//details//summary")
+    THIRD_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][3]//details/p")
+    FOURTH_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][4]//details//summary")
+    FOURTH_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][4]//details/p")
+    FIFTH_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][5]//details//summary")
+    FIFTH_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][5]//details/p")
+    SIXTH_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][6]//details//summary")
+    SIXTH_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][6]//details/p")
+    SEVENTH_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][7]//details//summary")
+    SEVENTH_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][7]//details/p")
+    EIGHTH_QUESTION_HEADER = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][8]//details//summary")
+    EIGHTH_QUESTION_DESCRIPTION = (By.XPATH, "//li[@class='FaqInfoItem_item__awC4B'][8]//details/p")
+
 
 class ContactUsPageLocators:
     pass

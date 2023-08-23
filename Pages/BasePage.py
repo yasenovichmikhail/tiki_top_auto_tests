@@ -1,4 +1,4 @@
-from selenium.common import NoSuchElementException
+from selenium.common import NoSuchElementException, TimeoutException
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,6 +34,13 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def is_not_element_present(self, how, what, timeout=4):
+        try:
+            WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((how, what)))
+        except TimeoutException:
+            return True
+        return False
 
     def get_title(self):
         return self.driver.title
@@ -74,6 +81,10 @@ class BasePage:
 
     def is_get_free_views_visible(self):
         assert self.is_element_present(*BasePageLocators.GET_FREE_VIEWS), "Get free views is not presented"
+
+    def go_to_home_page_from_header_link(self):
+        actual_link_name = self.get_element_text((BasePageLocators.HOME_LINK_HEADER))
+        expected_name = "Home"
 
     def go_to_pricing_page_from_header_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_HEADER)
