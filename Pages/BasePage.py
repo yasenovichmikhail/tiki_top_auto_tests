@@ -1,3 +1,5 @@
+import time
+
 from selenium.common import NoSuchElementException, TimeoutException
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -83,8 +85,12 @@ class BasePage:
         assert self.is_element_present(*BasePageLocators.GET_FREE_VIEWS), "Get free views is not presented"
 
     def go_to_home_page_from_header_link(self):
-        actual_link_name = self.get_element_text((BasePageLocators.HOME_LINK_HEADER))
-        expected_name = "Home"
+        actual_link_name = self.get_element_text(BasePageLocators.HOME_LINK_HEADER)
+        expected_link_name = "Home"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.HOME_LINK_HEADER)
+        title = self.get_title()
+        assert title == TestData.HOME_PAGE_TITLE, "Title of the Home page doesn't match"
 
     def go_to_pricing_page_from_header_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_HEADER)
@@ -109,6 +115,14 @@ class BasePage:
         self.click(BasePageLocators.CONTACT_US_LINK_HEADER)
         title = self.get_title()
         assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
+
+    def go_to_home_page_from_footer_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.HOME_LINK_FOOTER)
+        expected_link_name = "Home"
+        assert actual_link_name == expected_link_name, f"expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.HOME_LINK_FOOTER)
+        title = self.get_title()
+        assert title == TestData.HOME_PAGE_TITLE, "Title of the Home page doesn't match"
 
     def go_to_pricing_page_from_footer_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.PRICING_LINK_FOOTER)

@@ -12,11 +12,11 @@ class BasePageLocators:
     FAQ_LINK_HEADER = (By.XPATH, "//div//header//ul//li[3]")
     CONTACT_US_LINK_HEADER = (By.XPATH, "//div//header//ul//li[4]")
     LEARN_LINK_HEADER = (By.XPATH, "//div//header//ul//li[5]")
-    HOME_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[1]")
-    PRICING_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[2]")
-    FAQ_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[3]")
-    CONTACT_US_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[4]")
-    LEARN_LINK_FOOTER = (By.XPATH, "//div//header//ul//li[5]")
+    HOME_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[1]")
+    PRICING_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[2]")
+    FAQ_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[3]")
+    CONTACT_US_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[4]")
+    LEARN_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[5]")
 
 
 class HomePageLocators:

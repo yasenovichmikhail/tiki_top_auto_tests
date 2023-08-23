@@ -46,10 +46,20 @@ class TestFaq(BaseTest):
         page.go_to_faq_page_from_header_link()
         page.is_footer_visible()
 
-    def test_guest_can_go_to_home_page_from_header_link_faq(self):
+    def test_guest_can_go_to_home_page_from_header_link(self):
         page = FaqPage(self.driver)
         page.go_to_faq_page_from_header_link()
-        page.go
+        page.go_to_home_page_from_header_link()
+
+    def test_guest_can_go_to_pricing_page_from_header_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_header_link()
+        page.go_to_pricing_page_from_header_link()
+
+    def test_guest_can_go_to_contact_us_page_from_header_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_header_link()
+        page.go_to_contact_us_page_from_header_link()
 
     def test_guest_can_expand_collapse_first_question(self):
         page = FaqPage(self.driver)
@@ -98,4 +108,19 @@ class TestFaq(BaseTest):
         page.go_to_faq_page_from_header_link()
         page.expand_eighth_question()
         page.collapse_eighth_question()
+
+    def test_guest_can_go_to_home_page_from_footer_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_header_link()
+        page.go_to_home_page_from_footer_link()
+
+    def test_guest_can_go_to_pricing_page_from_footer_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_header_link()
+        page.go_to_pricing_page_from_footer_link()
+
+    def test_guest_can_go_to_contact_us_page_from_footer_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_header_link()
+        page.go_to_contact_us_page_from_footer_link()
 
