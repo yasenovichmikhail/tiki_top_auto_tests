@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
+    SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
+                               " CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
     HEADER_LOGO = (By.XPATH, "//a[@class='HeaderLogo_link__w6i5r']")
     HEADER = (By.XPATH, "//div[@class='HeaderTopWrapper_topWrapper__wcGqJ']")
     FOOTER = (By.XPATH, "//nav[@class='FooterNav_container__TNimz']")
@@ -17,6 +18,12 @@ class BasePageLocators:
     FAQ_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[3]")
     CONTACT_US_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[4]")
     LEARN_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[5]")
+    PRIVACY_POLICY_LINK = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U"
+                                     " ButtonTermsPrivacy_linkFooter__BtSNv'][1]")
+    TERMS_CONDITIONS_LINK = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U"
+                                       " ButtonTermsPrivacy_linkFooter__BtSNv'][2]")
+    EMAIL_ADDRESS_LINK = (By.XPATH, "//a[@class='ButtonTermsPrivacy_linkFooter__BtSNv'][1]")
+    TELEGRAM_LINK = (By.XPATH, "//a[@class='ButtonTermsPrivacy_linkFooter__BtSNv'][2]")
 
 
 class HomePageLocators:
