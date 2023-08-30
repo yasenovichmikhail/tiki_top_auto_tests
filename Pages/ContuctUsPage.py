@@ -18,7 +18,6 @@ class ContactUsPage(BasePage):
     def check_contact_us_page_title(self):
         title = self.get_title()
         assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
-        print(f"expected{TestData.CONTACT_US_PAGE_TITLE}, actual {title}")
 
     def is_contact_us_container_form_presented(self):
         actual_header = self.get_element_text(ContactUsPageLocators.GET_IN_TOUCH_HEADER)
@@ -30,3 +29,17 @@ class ContactUsPage(BasePage):
         assert actual_header == expected_header, f"expected {expected_header}, got {actual_header}"
         assert actual_description == expected_description, f"expected {expected_description}, got {actual_description}"
 
+    def is_first_name_text_field_presented(self):
+        actual_header = self.get_element_text(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD_HEADER)
+        expected_header = "First name"
+        assert self.is_element_present(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD), "First name text field" \
+                                                                                      " is not presented"
+        assert actual_header == expected_header, f"Header of the first name text field doesn't match." \
+                                                 f" Expected {expected_header}, got {actual_header}"
+
+    def is_first_name_text_field_placeholder_presented(self):
+        text_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
+        actual_placeholder = text_field.get_attribute('placeholder')
+        expected_placeholder = "Ex: Paul, Kate, John"
+        assert actual_placeholder == expected_placeholder, f"Placeholder of the first name text field doesn't match." \
+                                                           f" Expected {expected_placeholder}, got {actual_placeholder}"

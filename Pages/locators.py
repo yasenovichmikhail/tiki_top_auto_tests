@@ -84,6 +84,13 @@ class ContactUsPageLocators:
     CONTACT_US_CONTAINER_FORM = (By.XPATH, "//div[@class='ContactUsForm_containerForm__otErn']")
     GET_IN_TOUCH_HEADER = (By.XPATH, "//h1[@class='ContactUsForm_title__F_181']")
     GET_IN_TOUCH_DESCRIPTION = (By.XPATH, "//p[@class='ContactUsForm_description__XvG4f']")
+    FIRST_NAME_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][1]"
+                                              "//p[@class='InputContact_title__UKNrS']")
+    EMAIL_ADDRESS_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][2]"
+                                                 "//p[@class='InputContact_title__UKNrS']")
+    MESSAGE_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
+                                           "//p[@class='InputContact_title__UKNrS']")
+    FIRST_NAME_TEXT_FIELD = (By.XPATH, "//input[@id='name']")
 
 
 class LoginPageLocators:

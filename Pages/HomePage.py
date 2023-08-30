@@ -118,7 +118,4 @@ class HomePage(BasePage):
         self.click(HomePageLocators.ANY_QUESTIONS_CONTACT_US_BUTTON)
         assert self.get_title() == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact us page doesn't match"
 
-    def scroll_to_the_object(self):
-        self.scroll(*HomePageLocators.ANY_QUESTIONS_CONTAINER)
-
 
