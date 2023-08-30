@@ -80,7 +80,10 @@ class FaqPageLocators:
 
 
 class ContactUsPageLocators:
-    pass
+    CONTACT_US_BANNER = (By.XPATH, "//figure[@class='SecondOffer_secondOffer__QlB2k']")
+    CONTACT_US_CONTAINER_FORM = (By.XPATH, "//div[@class='ContactUsForm_containerForm__otErn']")
+    GET_IN_TOUCH_HEADER = (By.XPATH, "//h1[@class='ContactUsForm_title__F_181']")
+    GET_IN_TOUCH_DESCRIPTION = (By.XPATH, "//p[@class='ContactUsForm_description__XvG4f']")
 
 
 class LoginPageLocators:
