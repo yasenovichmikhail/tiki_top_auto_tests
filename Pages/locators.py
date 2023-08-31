@@ -91,6 +91,7 @@ class ContactUsPageLocators:
     MESSAGE_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
                                            "//p[@class='InputContact_title__UKNrS']")
     FIRST_NAME_TEXT_FIELD = (By.XPATH, "//input[@id='name']")
+    EMAIL_ADDRESS_TEXT_FIELD = (By.XPATH, "")
 
 
 class LoginPageLocators:
