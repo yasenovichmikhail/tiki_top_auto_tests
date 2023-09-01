@@ -47,8 +47,8 @@ class ContactUsPage(BasePage):
     def is_email_address_text_field_presented(self):
         actual_header = self.get_element_text(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD_HEADER)
         expected_header = "Email address"
-        assert self.is_element_present(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD), "Email address text field" \
-                                                                                        " is not presented"
+        assert self.is_element_present(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD), "Email address text field" \
+                                                                                         " is not presented"
         assert actual_header == expected_header, f"Header of the email address text field doesn't match." \
                                                  f" Expected {expected_header}, got {actual_header}"
 
@@ -57,5 +57,20 @@ class ContactUsPage(BasePage):
         actual_placeholder = text_field.get_attribute('placeholder')
         expected_placeholder = "tikitop.team@gmail.com"
         assert actual_placeholder == expected_placeholder, f"Placeholder of the email address text field doesn't" \
+                                                           f" match. Expected {expected_placeholder}," \
+                                                           f" got {actual_placeholder}"
+
+    def is_message_text_area_presented(self):
+        actual_header = self.get_element_text(ContactUsPageLocators.MESSAGE_TEXT_AREA_HEADER)
+        expected_header = "Message"
+        assert self.is_element_present(*ContactUsPageLocators.MESSAGE_TEXT_AREA), "Message text field is not presented"
+        assert actual_header == expected_header, f"Header of the message text field doesn't match." \
+                                                 f" Expected {expected_header}, got {actual_header}"
+
+    def is_message_text_area_placeholder_presented(self):
+        text_area = self.find_element(*ContactUsPageLocators.MESSAGE_TEXT_AREA)
+        actual_placeholder = text_area.get_attribute('placeholder')
+        expected_placeholder = "Hello! I would like to ask you about..."
+        assert actual_placeholder == expected_placeholder, f"Placeholder of the message text area doesn't" \
                                                            f" match. Expected {expected_placeholder}," \
                                                            f" got {actual_placeholder}"

@@ -88,10 +88,11 @@ class ContactUsPageLocators:
                                               "//p[@class='InputContact_title__UKNrS']")
     EMAIL_ADDRESS_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][2]"
                                                  "//p[@class='InputContact_title__UKNrS']")
-    MESSAGE_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
+    MESSAGE_TEXT_AREA_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
                                            "//p[@class='InputContact_title__UKNrS']")
     FIRST_NAME_TEXT_FIELD = (By.XPATH, "//input[@id='name']")
     EMAIL_ADDRESS_TEXT_FIELD = (By.XPATH, "//input[@id='email']")
+    MESSAGE_TEXT_AREA = (By.XPATH, "//textarea[@id='message']")
 
 
 class LoginPageLocators:
