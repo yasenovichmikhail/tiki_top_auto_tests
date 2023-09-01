@@ -43,3 +43,19 @@ class ContactUsPage(BasePage):
         expected_placeholder = "Ex: Paul, Kate, John"
         assert actual_placeholder == expected_placeholder, f"Placeholder of the first name text field doesn't match." \
                                                            f" Expected {expected_placeholder}, got {actual_placeholder}"
+
+    def is_email_address_text_field_presented(self):
+        actual_header = self.get_element_text(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD_HEADER)
+        expected_header = "Email address"
+        assert self.is_element_present(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD), "Email address text field" \
+                                                                                        " is not presented"
+        assert actual_header == expected_header, f"Header of the email address text field doesn't match." \
+                                                 f" Expected {expected_header}, got {actual_header}"
+
+    def is_email_address_text_field_placeholder_presented(self):
+        text_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
+        actual_placeholder = text_field.get_attribute('placeholder')
+        expected_placeholder = "tikitop.team@gmail.com"
+        assert actual_placeholder == expected_placeholder, f"Placeholder of the email address text field doesn't" \
+                                                           f" match. Expected {expected_placeholder}," \
+                                                           f" got {actual_placeholder}"
