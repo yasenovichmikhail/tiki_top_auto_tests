@@ -94,7 +94,10 @@ class ContactUsPageLocators:
     EMAIL_ADDRESS_TEXT_FIELD = (By.XPATH, "//input[@id='email']")
     MESSAGE_TEXT_AREA = (By.XPATH, "//textarea[@id='message']")
     SEND_MESSAGE_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3']")
-
+    EMAIL_ADDRESS_FIELD_REQUIRED_WARNING = (By.XPATH, "//div[@class='InputContact_container__czJ87'][2]"
+                                                      "//p[@class='ErrorMessage_error__oBSER']")
+    MESSAGE_TEXT_AREA_REQUIRED_WARNING = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
+                                                    "//p[@class='ErrorMessage_error__oBSER']")
 
 class LoginPageLocators:
     SIGNUP_BUTTON = (
