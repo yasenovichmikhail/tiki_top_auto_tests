@@ -28,6 +28,21 @@ class TestContactUs(BaseTest):
         page = ContactUsPage(self.driver)
         page.is_footer_visible()
 
+    def test_guest_can_go_to_home_page_from_header_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.go_to_home_page_from_header_link()
+
+    def test_guest_can_go_to_pricing_page_from_header_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.go_to_pricing_page_from_header_link()
+
+    def test_guest_can_go_to_faq_page_from_header_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.go_to_faq_page_from_header_link()
+
     def test_guest_can_see_get_free_views_from_contact_us_page(self):
         page = ContactUsPage(self.driver)
         page.is_get_free_views_visible()
@@ -46,28 +61,46 @@ class TestContactUs(BaseTest):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_first_name_text_field_placeholder_presented()
-    @pytest.mark.smoke
+
     def test_guest_can_see_email_address_text_field(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_email_address_text_field_presented()
 
-    @pytest.mark.smoke
     def test_guest_can_see_email_address_text_field_placeholder(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_email_address_text_field_placeholder_presented()
 
-    @pytest.mark.smoke
     def test_guest_can_see_message_text_area(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_message_text_area_presented()
 
-    @pytest.mark.smoke
     def test_guest_can_see_message_text_area_placeholder(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_message_text_area_placeholder_presented()
+
+    @pytest.mark.smoke
+    def test_guest_can_see_send_message_button(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_send_message_button_presented()
+
+    def test_guest_can_go_to_home_page_from_footer_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_footer_link()
+        page.go_to_home_page_from_footer_link()
+
+    def test_guest_can_go_to_pricing_page_from_footer_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_footer_link()
+        page.go_to_pricing_page_from_footer_link()
+
+    def test_guest_can_go_to_faq_page_from_footer_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_footer_link()
+        page.go_to_faq_page_from_footer_link()
 
 
