@@ -89,15 +89,18 @@ class ContactUsPageLocators:
     EMAIL_ADDRESS_TEXT_FIELD_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][2]"
                                                  "//p[@class='InputContact_title__UKNrS']")
     MESSAGE_TEXT_AREA_HEADER = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
-                                           "//p[@class='InputContact_title__UKNrS']")
+                                          "//p[@class='InputContact_title__UKNrS']")
     FIRST_NAME_TEXT_FIELD = (By.XPATH, "//input[@id='name']")
     EMAIL_ADDRESS_TEXT_FIELD = (By.XPATH, "//input[@id='email']")
     MESSAGE_TEXT_AREA = (By.XPATH, "//textarea[@id='message']")
+    SEND_MESSAGE_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3']")
 
 
 class LoginPageLocators:
-    SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
+    SIGNUP_BUTTON = (
+    By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
     LOGIN_TAB = (By.XPATH, "//div[@class='AuthorizationTypeItem_item__2IwVY'][2]")
     INPUT_EMAIL = (By.ID, "authorizationEmail")
     INPUT_PASSWORD = (By.ID, "authorizationPassword")
-    LOGIN_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")
+    LOGIN_BUTTON = (
+    By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")

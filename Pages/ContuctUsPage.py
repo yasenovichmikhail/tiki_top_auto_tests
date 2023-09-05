@@ -74,3 +74,11 @@ class ContactUsPage(BasePage):
         assert actual_placeholder == expected_placeholder, f"Placeholder of the message text area doesn't" \
                                                            f" match. Expected {expected_placeholder}," \
                                                            f" got {actual_placeholder}"
+
+    def is_send_message_button_presented(self):
+        actual_button_name = self.get_element_text(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        expected_button_name = "Send message"
+        assert self.is_element_present(*ContactUsPageLocators.SEND_MESSAGE_BUTTON), "Send message button " \
+                                                                                    "is not presented"
+        assert actual_button_name == expected_button_name, f"Name of the send message button doesn't match. " \
+                                                           f"Expected {expected_button_name}, got {actual_button_name}"

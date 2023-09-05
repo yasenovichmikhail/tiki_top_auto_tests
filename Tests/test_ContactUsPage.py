@@ -46,17 +46,28 @@ class TestContactUs(BaseTest):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_first_name_text_field_placeholder_presented()
-
+    @pytest.mark.smoke
     def test_guest_can_see_email_address_text_field(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_email_address_text_field_presented()
 
+    @pytest.mark.smoke
     def test_guest_can_see_email_address_text_field_placeholder(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_email_address_text_field_placeholder_presented()
 
-    
+    @pytest.mark.smoke
+    def test_guest_can_see_message_text_area(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_message_text_area_presented()
+
+    @pytest.mark.smoke
+    def test_guest_can_see_message_text_area_placeholder(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_message_text_area_placeholder_presented()
 
 
