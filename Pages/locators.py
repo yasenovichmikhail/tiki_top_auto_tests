@@ -98,12 +98,14 @@ class ContactUsPageLocators:
                                                       "//p[@class='ErrorMessage_error__oBSER']")
     MESSAGE_TEXT_AREA_REQUIRED_WARNING = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
                                                     "//p[@class='ErrorMessage_error__oBSER']")
+    PRIVACY_POLICY_BUTTON = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U']")
+
 
 class LoginPageLocators:
-    SIGNUP_BUTTON = (
-    By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
+    SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
+                               " CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
     LOGIN_TAB = (By.XPATH, "//div[@class='AuthorizationTypeItem_item__2IwVY'][2]")
     INPUT_EMAIL = (By.ID, "authorizationEmail")
     INPUT_PASSWORD = (By.ID, "authorizationPassword")
-    LOGIN_BUTTON = (
-    By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")
+    LOGIN_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
+                              " CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")

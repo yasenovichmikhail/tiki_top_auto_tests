@@ -82,3 +82,12 @@ class ContactUsPage(BasePage):
                                                                                     "is not presented"
         assert actual_button_name == expected_button_name, f"Name of the send message button doesn't match. " \
                                                            f"Expected {expected_button_name}, got {actual_button_name}"
+
+    def is_privacy_policy_button_presented(self):
+        actual_button_name = self.get_element_text(ContactUsPageLocators.PRIVACY_POLICY_BUTTON)
+        expected_button_name = "Privacy Policy"
+        assert self.is_element_present(*ContactUsPageLocators.PRIVACY_POLICY_BUTTON), "Privacy Policy button is " \
+                                                                                      "not presented"
+        assert actual_button_name == expected_button_name, f"Name of the Privacy Policy button doesn't match. " \
+                                                           f"Expected {expected_button_name}, got {actual_button_name}"
+
