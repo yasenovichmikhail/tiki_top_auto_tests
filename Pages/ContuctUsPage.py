@@ -91,3 +91,11 @@ class ContactUsPage(BasePage):
         assert actual_button_name == expected_button_name, f"Name of the Privacy Policy button doesn't match. " \
                                                            f"Expected {expected_button_name}, got {actual_button_name}"
 
+    def is_privacy_policy_opened(self):
+        self.click(ContactUsPageLocators.PRIVACY_POLICY_BUTTON)
+        actual_header = self.get_element_text(BasePageLocators.PRIVACY_POLICY_HEADER)
+        expected_header = "PRIVACY POLICY"
+        assert self.is_element_present(*BasePageLocators.PRIVACY_POLICY_CONTAINER), "Privacy Policy is not opened"
+        assert actual_header == expected_header, f"Header of the Privacy Policy doesn't match. " \
+                                                 f"Expected {expected_header}, got {actual_header}"
+

@@ -119,6 +119,22 @@ class BasePage:
         title = self.get_title()
         assert title == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
 
+    def go_to_learn_page_from_header_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.LEARN_LINK_HEADER)
+        expected_link_name = "Learn"
+        assert actual_link_name == expected_link_name, f"Name of the header Learn link doesn't match. " \
+                                                       f"Expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.LEARN_LINK_HEADER)
+        assert self.is_element_present(*BasePageLocators.LEARN_CONTAINER), "Learn container is not presented"
+
+    def go_to_learn_page_from_footer_link(self):
+        actual_link_name = self.get_element_text(BasePageLocators.LEARN_LINK_HEADER)
+        expected_link_name = "Learn"
+        assert actual_link_name == expected_link_name, f"Name of the footer Learn link doesn't match. " \
+                                                       f"Expected {expected_link_name}, got {actual_link_name}"
+        self.click(BasePageLocators.LEARN_LINK_FOOTER)
+        assert self.is_element_present(*BasePageLocators.LEARN_CONTAINER), "Learn container is not presented"
+
     def go_to_home_page_from_footer_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.HOME_LINK_FOOTER)
         expected_link_name = "Home"

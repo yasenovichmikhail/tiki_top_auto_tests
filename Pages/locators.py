@@ -24,6 +24,11 @@ class BasePageLocators:
                                        " ButtonTermsPrivacy_linkFooter__BtSNv'][2]")
     EMAIL_ADDRESS_LINK = (By.XPATH, "//a[@class='ButtonTermsPrivacy_linkFooter__BtSNv'][1]")
     TELEGRAM_LINK = (By.XPATH, "//a[@class='ButtonTermsPrivacy_linkFooter__BtSNv'][2]")
+    PRIVACY_POLICY_CONTAINER = (By.XPATH, "//div[@class='ModalBase_container__aKAn0 "
+                                          "ModalBase_secondTerms_Policy__bi4Ks']")
+    PRIVACY_POLICY_HEADER = (By.XPATH, "//article[@class='LayoutTermPrivacy_containerText__g__ZW']//h4")
+    LEARN_CONTAINER = (By.XPATH, "//div[@class='ModalBase_container__aKAn0 "
+                                 "ModalBase_colorBlack__FDws8 ModalBase_secondLearn__F77CZ']")
 
 
 class HomePageLocators:
