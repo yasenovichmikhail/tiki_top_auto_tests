@@ -59,6 +59,11 @@ class TestFaq(BaseTest):
         page.go_to_faq_page_from_header_link()
         page.go_to_contact_us_page_from_header_link()
 
+    def test_guest_can_go_to_learn_page_from_header_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_header_link()
+        page.go_to_learn_page_from_header_link()
+
     def test_guest_can_expand_collapse_first_question(self):
         page = FaqPage(self.driver)
         page.go_to_faq_page_from_header_link()
@@ -121,4 +126,9 @@ class TestFaq(BaseTest):
         page = FaqPage(self.driver)
         page.go_to_faq_page_from_header_link()
         page.go_to_contact_us_page_from_footer_link()
+
+    def test_guest_can_go_to_learn_page_from_footer_link(self):
+        page = FaqPage(self.driver)
+        page.go_to_faq_page_from_footer_link()
+        page.go_to_learn_page_from_footer_link()
 

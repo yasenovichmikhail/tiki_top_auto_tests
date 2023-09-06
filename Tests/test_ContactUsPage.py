@@ -43,6 +43,11 @@ class TestContactUs(BaseTest):
         page.go_to_contact_us_page_from_header_link()
         page.go_to_faq_page_from_header_link()
 
+    def test_guest_can_go_to_learn_page_from_header_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.go_to_learn_page_from_header_link()
+
     def test_guest_can_see_get_free_views_from_contact_us_page(self):
         page = ContactUsPage(self.driver)
         page.is_get_free_views_visible()
@@ -82,11 +87,20 @@ class TestContactUs(BaseTest):
         page.go_to_contact_us_page_from_header_link()
         page.is_message_text_area_placeholder_presented()
 
-    @pytest.mark.smoke
     def test_guest_can_see_send_message_button(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_send_message_button_presented()
+
+    def test_guest_can_see_privacy_policy_button(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_privacy_policy_button_presented()
+
+    def test_guest_can_open_privacy_policy_from_contact_us_page(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_privacy_policy_opened()
 
     def test_guest_can_go_to_home_page_from_footer_link(self):
         page = ContactUsPage(self.driver)
@@ -102,5 +116,16 @@ class TestContactUs(BaseTest):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_footer_link()
         page.go_to_faq_page_from_footer_link()
+
+    def test_guest_can_go_to_learn_page_from_footer_link(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_footer_link()
+        page.go_to_learn_page_from_footer_link()
+
+    def test_guest_can_go_to_privacy_policy_page(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.go_to_privacy_policy_from_footer_link()
+
 
 
