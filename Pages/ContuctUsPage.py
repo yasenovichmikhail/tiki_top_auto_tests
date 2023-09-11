@@ -99,3 +99,12 @@ class ContactUsPage(BasePage):
         assert actual_header == expected_header, f"Header of the Privacy Policy doesn't match. " \
                                                  f"Expected {expected_header}, got {actual_header}"
 
+    def is_email_address_field_required(self):
+        self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        actual_warning = self.get_element_text(ContactUsPageLocators.EMAIL_ADDRESS_FIELD_REQUIRED_WARNING)
+        expected_warning = "Required"
+        assert self.is_element_present(*ContactUsPageLocators.EMAIL_ADDRESS_FIELD_REQUIRED_WARNING), "Warning is" \
+                                                                                                     " not presented"
+        assert actual_warning == expected_warning, f"Warning of the empty email address field doesn't match. " \
+                                                   f"Expected {expected_warning}, got {actual_warning}"
+

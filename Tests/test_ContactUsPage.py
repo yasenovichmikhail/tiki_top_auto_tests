@@ -6,7 +6,7 @@ from Pages.ContuctUsPage import ContactUsPage
 from Tests.test_base import BaseTest
 
 
-class TestContactUs(BaseTest):
+class TestContactUsGeneral(BaseTest):
     def test_signup_button_is_visible(self):
         page = ContactUsPage(self.driver)
         page.is_signup_button_exist()
@@ -128,4 +128,11 @@ class TestContactUs(BaseTest):
         page.go_to_privacy_policy_from_footer_link()
 
 
+@pytest.mark.smoke
+class TestContactUsEmailAddress(BaseTest):
+
+    def test_guest_can_not_send_message_without_filling_email_address_field(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_email_address_field_required()
 
