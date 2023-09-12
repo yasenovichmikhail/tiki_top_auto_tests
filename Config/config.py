@@ -1,3 +1,7 @@
+import time
+from mimesis import Person
+
+
 class TestData:
 
     BASE_URL = "https://tikitop.io/"
@@ -10,6 +14,13 @@ class TestData:
     CONTACT_US_PAGE_TITLE = "Contact us | TikiTop"
     PROFILE_PAGE_TITLE = "Account | TikiTop"
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
+
+    def generate_valid_email_address(self):
+        p = Person('en')
+        email = p.email()
+        return email
+
+
     
 
 
