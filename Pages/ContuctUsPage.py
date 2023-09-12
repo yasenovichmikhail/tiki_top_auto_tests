@@ -1,8 +1,10 @@
+import random
 import time
 
 import pytest
 from selenium.webdriver.common.by import By
 
+import Config.config
 from Config.config import TestData
 from Pages.BasePage import BasePage
 from Pages.locators import BasePageLocators, HomePageLocators, FaqPageLocators, ContactUsPageLocators
@@ -108,14 +110,13 @@ class ContactUsPage(BasePage):
         assert actual_warning == expected_warning, f"Warning of the empty email address field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
 
+    def guest_can_enter_data_into_email_address_field(self):
+        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, TestData.generate_valid_email_address(self))
+        email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
+        actual_value = email_address_field.get_attribute('value')
+        assert len(actual_value) > 0, "Data is not entered"
+        time.sleep(5)
 
-
-
-
-
-
-
-    
     def is_message_field_required(self):
         self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
         actual_warning = self.get_element_text(ContactUsPageLocators.MESSAGE_TEXT_AREA_REQUIRED_WARNING)

@@ -1,5 +1,7 @@
 import time
 from mimesis import Person
+from mimesis import Gender
+from mimesis import Text
 
 
 class TestData:
@@ -20,7 +22,20 @@ class TestData:
         email = p.email()
         return email
 
+    def generate_male_first_name(self):
+        p = Person('en')
+        first_name = p.first_name(Gender.MALE)
+        return first_name
 
+    def generate_female_first_name(self):
+        p = Person('en')
+        first_name = p.first_name(Gender.FEMALE)
+        return first_name
+
+    def generate_sentences(self, quantity):
+        text = Text('en')
+        message = text.text(quantity)
+        return message
     
 
 

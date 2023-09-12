@@ -128,11 +128,15 @@ class TestContactUsGeneral(BaseTest):
         page.go_to_privacy_policy_from_footer_link()
 
 
-@pytest.mark.smoke
-class TestContactUsEmailAddress(BaseTest):
+class TestContactUsEmailAddressField(BaseTest):
 
-    def test_guest_can_not_send_message_without_filling_email_address_field(self):
+    def test_guest_cant_send_message_without_filling_email_address_field(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.is_email_address_field_required()
 
+    @pytest.mark.smoke
+    def test_guest_can_enter_data(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.guest_can_enter_data_into_email_address_field()
