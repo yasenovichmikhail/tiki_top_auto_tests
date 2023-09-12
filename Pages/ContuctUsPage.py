@@ -108,3 +108,22 @@ class ContactUsPage(BasePage):
         assert actual_warning == expected_warning, f"Warning of the empty email address field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
 
+
+
+
+
+
+
+
+    
+    def is_message_field_required(self):
+        self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        actual_warning = self.get_element_text(ContactUsPageLocators.MESSAGE_TEXT_AREA_REQUIRED_WARNING)
+        expected_warning = "Required"
+        assert self.is_element_present(*ContactUsPageLocators.MESSAGE_TEXT_AREA_REQUIRED_WARNING), "Warning is" \
+                                                                                                     " not presented"
+        assert actual_warning == expected_warning, f"Warning of the empty message field doesn't match. " \
+                                                   f"Expected {expected_warning}, got {actual_warning}"
+
+
+
