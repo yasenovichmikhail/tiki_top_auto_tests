@@ -110,12 +110,27 @@ class ContactUsPage(BasePage):
         assert actual_warning == expected_warning, f"Warning of the empty email address field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
 
-    def guest_can_enter_data_into_email_address_field(self):
-        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, TestData.generate_valid_email_address(self))
+    def enter_data_email_address_field(self):
+        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, TestData.generate_valid_email_address())
         email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
         actual_value = email_address_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
         time.sleep(5)
+
+    def clear_data_email_address_field(self):
+        email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
+        actual_value = email_address_field.get_attribute('value')
+        print(f"actual_value is {actual_value}")
+        email_address_field.clear()
+        actual_value1 = email_address_field.get_attribute('value')
+        print(f"actual_value_new is {actual_value1}")
+
+
+
+
+
+
+
 
     def is_message_field_required(self):
         self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
