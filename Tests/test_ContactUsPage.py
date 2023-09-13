@@ -135,8 +135,14 @@ class TestContactUsEmailAddressField(BaseTest):
         page.go_to_contact_us_page_from_header_link()
         page.is_email_address_field_required()
 
-    @pytest.mark.smoke
     def test_guest_can_enter_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.guest_can_enter_data_into_email_address_field()
+        page.enter_data_email_address_field()
+
+    @pytest.mark.test
+    def test_guest_can_clear_data(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_email_address_field()
+        page.clear_data_email_address_field()
