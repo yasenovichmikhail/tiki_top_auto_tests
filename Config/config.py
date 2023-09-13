@@ -17,22 +17,20 @@ class TestData:
     PROFILE_PAGE_TITLE = "Account | TikiTop"
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
 
-    def generate_valid_email_address(self):
+    @classmethod
+    def generate_valid_email_address(cls):
         p = Person('en')
         email = p.email()
         return email
 
-    def generate_male_first_name(self):
+    @classmethod
+    def generate_first_name(cls):
         p = Person('en')
-        first_name = p.first_name(Gender.MALE)
+        first_name = p.first_name()
         return first_name
 
-    def generate_female_first_name(self):
-        p = Person('en')
-        first_name = p.first_name(Gender.FEMALE)
-        return first_name
-
-    def generate_sentences(self, quantity):
+    @classmethod
+    def generate_sentences(cls, quantity):
         text = Text('en')
         message = text.text(quantity)
         return message
