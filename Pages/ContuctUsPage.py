@@ -120,10 +120,10 @@ class ContactUsPage(BasePage):
     def clear_data_email_address_field(self):
         email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
         actual_value = email_address_field.get_attribute('value')
-        print(f"actual_value is {actual_value}")
+        # print(f"actual_value is {actual_value}")
         email_address_field.clear()
         actual_value1 = email_address_field.get_attribute('value')
-        print(f"actual_value_new is {actual_value1}")
+        # print(f"actual_value_new is {actual_value1}")
 
 
 
