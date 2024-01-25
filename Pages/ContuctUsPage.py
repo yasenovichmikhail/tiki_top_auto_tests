@@ -102,6 +102,7 @@ class ContactUsPage(BasePage):
                                                  f"Expected {expected_header}, got {actual_header}"
 
     def is_email_address_field_required(self):
+        self.send_keys(ContactUsPageLocators.MESSAGE_TEXT_AREA, TestData.generate_sentences(7))
         self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
         actual_warning = self.get_element_text(ContactUsPageLocators.EMAIL_ADDRESS_FIELD_REQUIRED_WARNING)
         expected_warning = "Required"
@@ -109,28 +110,6 @@ class ContactUsPage(BasePage):
                                                                                                      " not presented"
         assert actual_warning == expected_warning, f"Warning of the empty email address field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
-
-    def enter_data_email_address_field(self):
-        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, TestData.generate_valid_email_address())
-        email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
-        actual_value = email_address_field.get_attribute('value')
-        assert len(actual_value) > 0, "Data is not entered"
-        time.sleep(5)
-
-    def clear_data_email_address_field(self):
-        email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
-        actual_value = email_address_field.get_attribute('value')
-        # print(f"actual_value is {actual_value}")
-        email_address_field.clear()
-        actual_value1 = email_address_field.get_attribute('value')
-        # print(f"actual_value_new is {actual_value1}")
-
-
-
-
-
-
-
 
     def is_message_field_required(self):
         self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
@@ -140,6 +119,55 @@ class ContactUsPage(BasePage):
                                                                                                      " not presented"
         assert actual_warning == expected_warning, f"Warning of the empty message field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
+
+    def enter_data_first_name_field(self):
+        self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, TestData.generate_first_name())
+        first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
+        actual_value = first_name_field.get_attribute('value')
+        assert len(actual_value) > 0, "Data is not entered"
+
+    def enter_data_email_address_field(self):
+        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, TestData.generate_valid_email_address())
+        email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
+        actual_value = email_address_field.get_attribute('value')
+        assert len(actual_value) > 0, "Data is not entered"
+
+    def enter_data_message_field(self):
+        self.send_keys(ContactUsPageLocators.MESSAGE_TEXT_AREA, TestData.generate_sentences(10))
+        message_field = self.find_element(*ContactUsPageLocators.MESSAGE_TEXT_AREA)
+        actual_value = message_field.get_attribute('value')
+        assert len(actual_value) > 0, "Data is not entered"
+
+    def clear_data_first_name_field(self):
+        first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
+        actual_email = first_name_field.get_attribute('value')
+        actual_len = len(actual_email)
+        for i in range(actual_len):
+            first_name_field.send_keys("\b")
+        actual_new_value = first_name_field.get_attribute('value')
+        assert len(actual_new_value) == 0, "Data is not cleared"
+
+    def clear_data_email_address_field(self):
+        email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
+        actual_email = email_address_field.get_attribute('value')
+        actual_len = len(actual_email)
+        for i in range(actual_len):
+            email_address_field.send_keys("\b")
+        actual_new_value = email_address_field.get_attribute('value')
+        assert len(actual_new_value) == 0, "Data is not cleared"
+
+    def clear_message_field(self):
+        message_field = self.find_element(*ContactUsPageLocators.MESSAGE_TEXT_AREA)
+        actual_email = message_field.get_attribute('value')
+        actual_len = len(actual_email)
+        for i in range(actual_len):
+            message_field.send_keys("\b")
+        actual_new_value = message_field.get_attribute('value')
+        assert len(actual_new_value) == 0, "Data is not cleared"
+
+    def click_send_message_button(self):
+        send_message_button = self.find_element(*ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        send_message_button.click()
 
 
 

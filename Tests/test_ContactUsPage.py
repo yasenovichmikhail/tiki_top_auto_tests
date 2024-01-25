@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from Config.config import TestData
@@ -7,6 +9,7 @@ from Tests.test_base import BaseTest
 
 
 class TestContactUsGeneral(BaseTest):
+
     def test_signup_button_is_visible(self):
         page = ContactUsPage(self.driver)
         page.is_signup_button_exist()
@@ -140,9 +143,33 @@ class TestContactUsEmailAddressField(BaseTest):
         page.go_to_contact_us_page_from_header_link()
         page.enter_data_email_address_field()
 
-    @pytest.mark.test
     def test_guest_can_clear_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.enter_data_email_address_field()
         page.clear_data_email_address_field()
+
+    def test_guest_can_edit_entered_data(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_email_address_field()
+        page.clear_data_email_address_field()
+        page.enter_data_email_address_field()
+
+
+class TestContactUsFirstNameField(BaseTest):
+    def test_guest_can_send_message_without_filling_first_name(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+
+    @pytest.mark.smoke
+    def test_guest_can_send_message_all_field_filled(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_first_name_field()
+        page.enter_data_email_address_field()
+        page.enter_data_message_field()
+        page.click_send_message_button()
+        #Добавить проверку
+
+
