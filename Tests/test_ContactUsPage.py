@@ -161,6 +161,7 @@ class TestContactUsFirstNameField(BaseTest):
     def test_guest_can_send_message_without_filling_first_name(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
+        #fixed me
 
     @pytest.mark.smoke
     def test_guest_can_send_message_all_field_filled(self):
@@ -170,6 +171,5 @@ class TestContactUsFirstNameField(BaseTest):
         page.enter_data_email_address_field()
         page.enter_data_message_field()
         page.click_send_message_button()
-        #Добавить проверку
 
 

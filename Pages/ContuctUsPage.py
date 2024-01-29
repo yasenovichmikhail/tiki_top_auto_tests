@@ -168,6 +168,11 @@ class ContactUsPage(BasePage):
     def click_send_message_button(self):
         send_message_button = self.find_element(*ContactUsPageLocators.SEND_MESSAGE_BUTTON)
         send_message_button.click()
+        actual_text = self.get_element_text(ContactUsPageLocators.SUCCESS_SEND_MESSAGE_TEXT)
+        expected_text = "Your message has been sended"
+        assert self.is_element_present(*ContactUsPageLocators.SUCCESS_SEND_MESSAGE_POPUP), "Success popup is " \
+                                                                                           "not presented"
+        assert actual_text == expected_text, f"Expected {expected_text}, got {actual_text}"
 
 
 

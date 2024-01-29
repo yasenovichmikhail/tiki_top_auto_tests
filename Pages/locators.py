@@ -104,6 +104,9 @@ class ContactUsPageLocators:
     MESSAGE_TEXT_AREA_REQUIRED_WARNING = (By.XPATH, "//div[@class='InputContact_container__czJ87'][3]"
                                                     "//p[@class='ErrorMessage_error__oBSER']")
     PRIVACY_POLICY_BUTTON = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U']")
+    SUCCESS_SEND_MESSAGE_POPUP = (By.XPATH, "//div [@class='ModalBase_container__aKAn0 ModalBase_colorWhite__LRBeE"
+                                            " ModalBase_typeModalSuccess__xIWgx']")
+    SUCCESS_SEND_MESSAGE_TEXT = (By.XPATH, "//h4 [@class='ModalSuccess_title__EMOMJ']")
 
 
 class LoginPageLocators:
