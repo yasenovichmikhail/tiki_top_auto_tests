@@ -165,7 +165,6 @@ class TestContactUsFirstNameField(BaseTest):
         page.enter_data_message_field(TestData.generate_sentences(10))
         page.click_send_message_button()
 
-    @pytest.mark.smoke
     def test_guest_can_send_message_all_field_filled(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
@@ -173,5 +172,35 @@ class TestContactUsFirstNameField(BaseTest):
         page.enter_data_email_address_field(TestData.generate_valid_email_address())
         page.enter_data_message_field(TestData.generate_sentences(10))
         page.click_send_message_button()
+
+    def test_guest_can_enter_lowercase_letter(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
+                                                                             TestData.LOWERCASE_LETTERS))
+
+    def test_guest_can_enter_uppercase_letter(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
+                                                                             TestData.UPPERCASE_LETTERS))
+
+    def test_guest_can_enter_digits(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
+                                                                             TestData.DIGITS))
+
+    @pytest.mark.smoke
+    def test_guest_can_enter_special_characters(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
+                                                                             TestData.PUNCTUATION))
+
+
+
+
+
 
 

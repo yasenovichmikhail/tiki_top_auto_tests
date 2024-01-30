@@ -116,7 +116,7 @@ class ContactUsPage(BasePage):
         actual_warning = self.get_element_text(ContactUsPageLocators.MESSAGE_TEXT_AREA_REQUIRED_WARNING)
         expected_warning = "Required"
         assert self.is_element_present(*ContactUsPageLocators.MESSAGE_TEXT_AREA_REQUIRED_WARNING), "Warning is" \
-                                                                                                     " not presented"
+                                                                                                   " not presented"
         assert actual_warning == expected_warning, f"Warning of the empty message field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
 
@@ -125,6 +125,7 @@ class ContactUsPage(BasePage):
         first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
         actual_value = first_name_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
+        time.sleep(2)
 
     def enter_data_email_address_field(self, value):
         self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, value)

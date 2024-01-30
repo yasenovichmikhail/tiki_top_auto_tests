@@ -2,7 +2,7 @@ import time
 from mimesis import Person
 from mimesis import Gender
 from mimesis import Text
-from random import random
+import random
 import string as s
 
 
@@ -25,10 +25,10 @@ class TestData:
     PUNCTUATION = s.punctuation
 
     @classmethod
-    def generate_random_characters(cls, num_char):
+    def generate_random_characters(cls, num_char, type_char):
         result = ''
         for i in range(num_char):
-            x = random.choice(TestData.ALL_LETTERS)
+            x = random.choice(type_char)
             result += x
         return result
 
