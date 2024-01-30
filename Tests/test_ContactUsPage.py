@@ -191,12 +191,13 @@ class TestContactUsFirstNameField(BaseTest):
         page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
                                                                              TestData.DIGITS))
 
-    @pytest.mark.smoke
     def test_guest_can_enter_special_characters(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
                                                                              TestData.PUNCTUATION))
+
+    @pytest.mark.smoke
 
 
 

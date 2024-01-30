@@ -125,7 +125,7 @@ class ContactUsPage(BasePage):
         first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
         actual_value = first_name_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
-        time.sleep(2)
+        time.sleep(5)
 
     def enter_data_email_address_field(self, value):
         self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, value)

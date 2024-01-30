@@ -33,6 +33,19 @@ class TestData:
         return result
 
     @classmethod
+    def generate_password(cls, num_char, lower, upper, digits):
+        password = ''
+        for i in range(num_char):
+            choose = random.randint(1, 3)
+            if choose == 1:
+                password += random.choice(lower)
+            elif choose == 2:
+                password += random.choice(upper)
+            elif choose == 3:
+                password += random.choice(digits)
+        return password
+
+    @classmethod
     def generate_valid_email_address(cls):
         p = Person('en')
         email = p.email()
