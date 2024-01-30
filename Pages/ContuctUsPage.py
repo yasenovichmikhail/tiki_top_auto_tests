@@ -120,20 +120,20 @@ class ContactUsPage(BasePage):
         assert actual_warning == expected_warning, f"Warning of the empty message field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
 
-    def enter_data_first_name_field(self):
-        self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, TestData.generate_first_name())
+    def enter_data_first_name_field(self, value):
+        self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, value)
         first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
         actual_value = first_name_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
 
-    def enter_data_email_address_field(self):
-        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, TestData.generate_valid_email_address())
+    def enter_data_email_address_field(self, value):
+        self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, value)
         email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
         actual_value = email_address_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
 
-    def enter_data_message_field(self):
-        self.send_keys(ContactUsPageLocators.MESSAGE_TEXT_AREA, TestData.generate_sentences(10))
+    def enter_data_message_field(self, value):
+        self.send_keys(ContactUsPageLocators.MESSAGE_TEXT_AREA, value)
         message_field = self.find_element(*ContactUsPageLocators.MESSAGE_TEXT_AREA)
         actual_value = message_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"

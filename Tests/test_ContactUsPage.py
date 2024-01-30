@@ -141,35 +141,37 @@ class TestContactUsEmailAddressField(BaseTest):
     def test_guest_can_enter_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.enter_data_email_address_field()
+        page.enter_data_email_address_field(TestData.generate_valid_email_address())
 
     def test_guest_can_clear_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.enter_data_email_address_field()
+        page.enter_data_email_address_field(TestData.generate_valid_email_address())
         page.clear_data_email_address_field()
 
     def test_guest_can_edit_entered_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.enter_data_email_address_field()
+        page.enter_data_email_address_field(TestData.generate_valid_email_address())
         page.clear_data_email_address_field()
-        page.enter_data_email_address_field()
+        page.enter_data_email_address_field(TestData.generate_valid_email_address())
 
 
 class TestContactUsFirstNameField(BaseTest):
     def test_guest_can_send_message_without_filling_first_name(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        #fixed me
+        page.enter_data_email_address_field(TestData.generate_valid_email_address())
+        page.enter_data_message_field(TestData.generate_sentences(10))
+        page.click_send_message_button()
 
     @pytest.mark.smoke
     def test_guest_can_send_message_all_field_filled(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.enter_data_first_name_field()
-        page.enter_data_email_address_field()
-        page.enter_data_message_field()
+        page.enter_data_first_name_field(TestData.generate_first_name())
+        page.enter_data_email_address_field(TestData.generate_valid_email_address())
+        page.enter_data_message_field(TestData.generate_sentences(10))
         page.click_send_message_button()
 
 
