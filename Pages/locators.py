@@ -107,6 +107,8 @@ class ContactUsPageLocators:
     SUCCESS_SEND_MESSAGE_POPUP = (By.XPATH, "//div [@class='ModalBase_container__aKAn0 ModalBase_colorWhite__LRBeE"
                                             " ModalBase_typeModalSuccess__xIWgx']")
     SUCCESS_SEND_MESSAGE_TEXT = (By.XPATH, "//h4 [@class='ModalSuccess_title__EMOMJ']")
+    MAX_LENGTH_FIRST_NAME_FIELD_WARNING = (By.XPATH, "//div[@class='InputContact_container__czJ87'][1]"
+                                                     "//p[@class='ErrorMessage_error__oBSER']")
 
 
 class LoginPageLocators:

@@ -120,6 +120,16 @@ class ContactUsPage(BasePage):
         assert actual_warning == expected_warning, f"Warning of the empty message field doesn't match. " \
                                                    f"Expected {expected_warning}, got {actual_warning}"
 
+    def is_max_length_warning_first_name_field_presented(self, value):
+        self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, value)
+        self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        actual_warning = self.get_element_text(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING)
+        expected_warning = "Must be 15 characters or less"
+        assert self.is_element_present(*ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING), "Warning is" \
+                                                                                                    " not presented"
+        assert actual_warning == expected_warning, f"Warning doesn't match. Expected {expected_warning}," \
+                                                   f" got {actual_warning}"
+
     def enter_data_first_name_field(self, value):
         self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, value)
         first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)

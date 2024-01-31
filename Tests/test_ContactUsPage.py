@@ -198,7 +198,14 @@ class TestContactUsFirstNameField(BaseTest):
                                                                              TestData.PUNCTUATION))
 
     @pytest.mark.smoke
-
+    def test_guest_cant_enter_more_than_max_characters_first_name_field(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
+                                                                             TestData.ALL_LETTERS))
+        page.is_max_length_warning_first_name_field_presented(TestData.generate_random_characters
+                                                              (TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
+                                                               TestData.ALL_LETTERS))
 
 
 
