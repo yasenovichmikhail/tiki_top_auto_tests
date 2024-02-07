@@ -62,3 +62,21 @@ class TestData:
         text = Text('en')
         message = text.text(quantity)
         return message
+
+
+class ContactUsTestData:
+    GET_IN_TOUCH_HEADER = "GET IN TOUCH"
+    GET_IN_TOUCH_DESCRIPTION = "Have any questions? We'd love to hear from you"
+    FIRST_NAME_TEXT_FIELD_HEADER = "First name"
+    FIRST_NAME_FIELD_PLACEHOLDER = "Ex: Paul, Kate, John"
+    EMAIL_ADDRESS_TEXT_FIELD_HEADER = "Email address"
+    EMAIL_ADDRESS_FIELD_PLACEHOLDER = "tikitop.team@gmail.com"
+    MESSAGE_TEXT_AREA_HEADER = "Message"
+    MESSAGE_TEXT_AREA_PLACEHOLDER = "Hello! I would like to ask you about..."
+    SEND_MESSAGE_BUTTON = "Send message"
+    PRIVACY_POLICY_BUTTON = "Privacy Policy"
+    PRIVACY_POLICY_HEADER = "PRIVACY POLICY"
+    EMAIL_ADDRESS_FIELD_REQUIRED_WARNING = "Required"
+    MESSAGE_TEXT_AREA_REQUIRED_WARNING = "Required"
+    MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
+    SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
