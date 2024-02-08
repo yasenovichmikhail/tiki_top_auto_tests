@@ -54,7 +54,7 @@ class TestContactUsGeneral(BaseTest):
     def test_guest_can_see_get_free_views_from_contact_us_page(self):
         page = ContactUsPage(self.driver)
         page.is_get_free_views_visible()
-
+    @pytest.mark.smoke
     def test_guest_can_see_get_in_touch_container_form(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
@@ -197,7 +197,6 @@ class TestContactUsFirstNameField(BaseTest):
         page.enter_data_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
                                                                              TestData.PUNCTUATION))
 
-    @pytest.mark.smoke
     def test_guest_cant_enter_more_than_max_characters_first_name_field(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()

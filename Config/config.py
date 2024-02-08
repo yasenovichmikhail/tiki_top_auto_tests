@@ -77,6 +77,6 @@ class ContactUsTestData:
     PRIVACY_POLICY_BUTTON = "Privacy Policy"
     PRIVACY_POLICY_HEADER = "PRIVACY POLICY"
     EMAIL_ADDRESS_FIELD_REQUIRED_WARNING = "Required"
-    MESSAGE_TEXT_AREA_REQUIRED_WARNING = "Required"
+    MESSAGE_FIELD_REQUIRED_WARNING = "Required"
     MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
     SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
