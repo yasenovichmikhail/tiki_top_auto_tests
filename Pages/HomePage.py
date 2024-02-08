@@ -2,7 +2,7 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from Config.config import TestData
+from Config.config import TestData, ContactUsTestData
 from Pages.BasePage import BasePage
 from Pages.locators import BasePageLocators, HomePageLocators
 
@@ -116,6 +116,6 @@ class HomePage(BasePage):
         expected_button_name = "Contact us"
         assert actual_button_name == expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
         self.click(HomePageLocators.ANY_QUESTIONS_CONTACT_US_BUTTON)
-        assert self.get_title() == TestData.CONTACT_US_PAGE_TITLE, "Title of the Contact us page doesn't match"
+        assert self.get_title() == ContactUsTestData.CONTACT_US_PAGE_TITLE, "Title of the Contact us page doesn't match"
 
 

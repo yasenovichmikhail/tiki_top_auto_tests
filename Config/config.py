@@ -13,7 +13,6 @@ class TestData:
 
     HOME_PAGE_TITLE = "Home | TikiTop"
     PRICING_PAGE_TITLE = "Pricing | TikiTop"
-    FAQ_PAGE_TITLE = "FAQ | TikiTop"
     PROFILE_PAGE_TITLE = "Account | TikiTop"
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
     MAX_CHARACTER_FIRST_NAME_FIELD = 15
@@ -81,3 +80,31 @@ class ContactUsTestData:
     MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
     SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
 
+
+class FaqTestData:
+    FAQ_PAGE_TITLE = "FAQ | TikiTop"
+    POPULAR_QUESTIONS_HEADER = "POPULAR QUESTIONS"
+    FIRST_QUESTION_HEADER = "Is it safe to promote from you?"
+    FIRST_QUESTION_DESCRIPTION = "Yap! We only request your username or the link to your TikTok profile." \
+                                 " It is enough to boost your TikTok stats. We don't need your password," \
+                                 " mail or anything else."
+    SECOND_QUESTION_HEADER = "What are the promotion limits?"
+    SECOND_QUESTION_DESCRIPTION = "The limit is the maximum number on the Pricing page." \
+                                  " This is due to our capacity, we strive to make the limit higher."
+    THIRD_QUESTION_HEADER = "What are the accepted payment methods?"
+    THIRD_QUESTION_DESCRIPTION = "Now you can pay with credit/debit card through Stripe only. However," \
+                                 " we are working on having multiple payment methods for later on."
+    FOURTH_QUESTION_HEADER = "Can I promote someone else's account?"
+    FOURTH_QUESTION_DESCRIPTION = "Yes, you need only a username or the link to someone else’s account."
+    FIFTH_QUESTION_HEADER = "What is Order?"
+    FIFTH_QUESTION_DESCRIPTION = "Order is promotion of one category per post."
+    SIXTH_QUESTION_HEADER = "What number of days is better to choose for an order?"
+    SIXTH_QUESTION_DESCRIPTION = "The more days you choose, the bigger chance that we can boost your" \
+                                 " account evenly so as not to arouse suspicion for TikTok. Otherwise," \
+                                 " your account can be banned or suspended by TikTok."
+    SEVENTH_QUESTION_HEADER = "How to stop an active order?"
+    SEVENTH_QUESTION_DESCRIPTION = "If you want to stop an active order, you can delete it but you " \
+                                   "should know that your money won't be refunded. Steps to delete an " \
+                                   "order: My Profile ➝ Order ➝ Delete Order."
+    EIGHTH_QUESTION_HEADER = "Can I do multiple orders on 1 post?"
+    EIGHTH_QUESTION_DESCRIPTION = "Yes, you can, but you have to do it with different categories."
