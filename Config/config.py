@@ -14,7 +14,6 @@ class TestData:
     HOME_PAGE_TITLE = "Home | TikiTop"
     PRICING_PAGE_TITLE = "Pricing | TikiTop"
     FAQ_PAGE_TITLE = "FAQ | TikiTop"
-    CONTACT_US_PAGE_TITLE = "Contact us | TikiTop"
     PROFILE_PAGE_TITLE = "Account | TikiTop"
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
     MAX_CHARACTER_FIRST_NAME_FIELD = 15
@@ -65,6 +64,7 @@ class TestData:
 
 
 class ContactUsTestData:
+    CONTACT_US_PAGE_TITLE = "Contact us | TikiTop"
     GET_IN_TOUCH_HEADER = "GET IN TOUCH"
     GET_IN_TOUCH_DESCRIPTION = "Have any questions? We'd love to hear from you"
     FIRST_NAME_TEXT_FIELD_HEADER = "First name"
@@ -80,3 +80,4 @@ class ContactUsTestData:
     MESSAGE_FIELD_REQUIRED_WARNING = "Required"
     MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
     SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
+

@@ -19,7 +19,7 @@ class ContactUsPage(BasePage):
 
     def check_contact_us_page_title(self):
         title = self.get_title()
-        assert title == TestData.CONTACT_US_PAGE_TITLE, \
+        assert title == ContactUsTestData.CONTACT_US_PAGE_TITLE, \
             f"Title of the Contact Us page doesn't match"
 
     def is_contact_us_container_form_presented(self):
