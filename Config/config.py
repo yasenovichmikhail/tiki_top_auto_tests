@@ -11,9 +11,6 @@ class TestData:
     USER_NAME = "bobbyngayer@gmail.com"
     PASSWORD = "qwertyasd"
 
-    HOME_PAGE_TITLE = "Home | TikiTop"
-    PRICING_PAGE_TITLE = "Pricing | TikiTop"
-    PROFILE_PAGE_TITLE = "Account | TikiTop"
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
     MAX_CHARACTER_FIRST_NAME_FIELD = 15
     ALL_LETTERS = s.ascii_letters
@@ -62,23 +59,17 @@ class TestData:
         return message
 
 
-class ContactUsTestData:
-    CONTACT_US_PAGE_TITLE = "Contact us | TikiTop"
-    GET_IN_TOUCH_HEADER = "GET IN TOUCH"
-    GET_IN_TOUCH_DESCRIPTION = "Have any questions? We'd love to hear from you"
-    FIRST_NAME_TEXT_FIELD_HEADER = "First name"
-    FIRST_NAME_FIELD_PLACEHOLDER = "Ex: Paul, Kate, John"
-    EMAIL_ADDRESS_TEXT_FIELD_HEADER = "Email address"
-    EMAIL_ADDRESS_FIELD_PLACEHOLDER = "tikitop.team@gmail.com"
-    MESSAGE_TEXT_AREA_HEADER = "Message"
-    MESSAGE_TEXT_AREA_PLACEHOLDER = "Hello! I would like to ask you about..."
-    SEND_MESSAGE_BUTTON = "Send message"
-    PRIVACY_POLICY_BUTTON = "Privacy Policy"
-    PRIVACY_POLICY_HEADER = "PRIVACY POLICY"
-    EMAIL_ADDRESS_FIELD_REQUIRED_WARNING = "Required"
-    MESSAGE_FIELD_REQUIRED_WARNING = "Required"
-    MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
-    SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
+class HomeTestData:
+    HOME_PAGE_TITLE = "Home | TikiTop"
+    MAKE_AN_ORDER_BUTTON = "Make an order"
+    HOW_IT_WORKS_BUTTON = "How it works?"
+    BOOST_YOUR_TIKTOK_PROFILE_HEADER = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
+    BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION = "Promote your new video to get it into people's recommendations. " \
+                                            "Buy a subscription to keep your stats up to date. Become popular!"
+
+
+class PricingTestData:
+    PRICING_PAGE_TITLE = "Pricing | TikiTop"
 
 
 class FaqTestData:
@@ -108,3 +99,26 @@ class FaqTestData:
                                    "order: My Profile ➝ Order ➝ Delete Order."
     EIGHTH_QUESTION_HEADER = "Can I do multiple orders on 1 post?"
     EIGHTH_QUESTION_DESCRIPTION = "Yes, you can, but you have to do it with different categories."
+
+
+class ContactUsTestData:
+    CONTACT_US_PAGE_TITLE = "Contact us | TikiTop"
+    GET_IN_TOUCH_HEADER = "GET IN TOUCH"
+    GET_IN_TOUCH_DESCRIPTION = "Have any questions? We'd love to hear from you"
+    FIRST_NAME_TEXT_FIELD_HEADER = "First name"
+    FIRST_NAME_FIELD_PLACEHOLDER = "Ex: Paul, Kate, John"
+    EMAIL_ADDRESS_TEXT_FIELD_HEADER = "Email address"
+    EMAIL_ADDRESS_FIELD_PLACEHOLDER = "tikitop.team@gmail.com"
+    MESSAGE_TEXT_AREA_HEADER = "Message"
+    MESSAGE_TEXT_AREA_PLACEHOLDER = "Hello! I would like to ask you about..."
+    SEND_MESSAGE_BUTTON = "Send message"
+    PRIVACY_POLICY_BUTTON = "Privacy Policy"
+    PRIVACY_POLICY_HEADER = "PRIVACY POLICY"
+    EMAIL_ADDRESS_FIELD_REQUIRED_WARNING = "Required"
+    MESSAGE_FIELD_REQUIRED_WARNING = "Required"
+    MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
+    SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
+
+
+class ProfileTestData:
+    PROFILE_PAGE_TITLE = "Account | TikiTop"

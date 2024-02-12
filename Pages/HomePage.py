@@ -2,7 +2,7 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from Config.config import TestData, ContactUsTestData
+from Config.config import TestData, ContactUsTestData, HomeTestData
 from Pages.BasePage import BasePage
 from Pages.locators import BasePageLocators, HomePageLocators
 
@@ -18,7 +18,7 @@ class HomePage(BasePage):
 
     def check_home_page_title(self):
         title = self.get_title()
-        assert title == TestData.HOME_PAGE_TITLE, "Title doesn't match"
+        assert title == HomeTestData.HOME_PAGE_TITLE, "Title doesn't match"
 
     def is_make_an_order_button_presented(self):
         actual_button_name = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)

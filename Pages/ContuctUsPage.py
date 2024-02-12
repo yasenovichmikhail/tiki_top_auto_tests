@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 import Config.config
 from Config.config import TestData, ContactUsTestData
 from Pages.BasePage import BasePage
-from Pages.locators import ContactUsPageLocators
+from Pages.locators import ContactUsPageLocators, BasePageLocators
 
 
 class ContactUsPage(BasePage):
@@ -96,14 +96,13 @@ class ContactUsPage(BasePage):
             f"Name of the Privacy Policy button doesn't match. " \
             f"Expected {ContactUsTestData.PRIVACY_POLICY_BUTTON}, got {actual_button_name}"
 
-    # def is_privacy_policy_opened(self):
-    #     self.click(ContactUsPageLocators.PRIVACY_POLICY_BUTTON)
-    #     actual_header = self.get_element_text(BasePageLocators.PRIVACY_POLICY_HEADER)
-    #     expected_header = "PRIVACY POLICY"
-    #     assert self.is_element_present(*BasePageLocators.PRIVACY_POLICY_CONTAINER), "Privacy Policy is not opened"
-    #     assert actual_header == expected_header, f"Header of the Privacy Policy doesn't match. " \
-    #                                              f"Expected {expected_header}, got {actual_header}"
-    # Fix me: there are privacy button and privacy header, need 2 different assert
+    def is_privacy_policy_opened(self):
+        self.click(ContactUsPageLocators.PRIVACY_POLICY_BUTTON)
+        actual_header = self.get_element_text(ContactUsTestData.PRIVACY_POLICY_HEADER)
+        assert self.is_element_present(*BasePageLocators.PRIVACY_POLICY_CONTAINER), "Privacy Policy is not opened"
+        assert actual_header == ContactUsTestData.PRIVACY_POLICY_HEADER, \
+            f"Header of the Privacy Policy doesn't match. " \
+            f"Expected {ContactUsTestData.PRIVACY_POLICY_HEADER}, got {actual_header}"
 
     def is_email_address_field_required(self):
         self.send_keys(ContactUsPageLocators.MESSAGE_TEXT_AREA, TestData.generate_sentences(7))
