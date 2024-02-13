@@ -66,7 +66,21 @@ class HomeTestData:
     BOOST_YOUR_TIKTOK_PROFILE_HEADER = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
     BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION = "Promote your new video to get it into people's recommendations. " \
                                             "Buy a subscription to keep your stats up to date. Become popular!"
+    WHAT_DO_WE_OFFER_HEADER = "WHAT DO WE OFFER?"
 
+    WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON =
+
+    WHAT_WE_HAVE_ALREADY_DONE_HEADER = "WHAT WE'VE ALREADY DONE"
+
+    PROMOTION_FORMATS_HEADER = "PROMOTION FORMATS"
+
+    OUR_CLIENTS_TRUST_US_HEADER = "OUR CLIENTS TRUST US"
+
+    ANY_QUESTIONS_HEADER = "ANY QUESTIONS?"
+    ANY_QUESTIONS_DESCRIPTION = "Our services offer high-end promotion packages whose destiny is to power-up your " \
+                                "TikTok presence. Boost to the element of your choice immediately —be it likes, " \
+                                "views, and whatnot."
+    ANY_QUESTIONS_MORE_INFO_BUTTON = "More info"
 
 class PricingTestData:
     PRICING_PAGE_TITLE = "Pricing | TikiTop"
