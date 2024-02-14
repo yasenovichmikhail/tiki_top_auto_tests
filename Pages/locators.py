@@ -119,3 +119,27 @@ class LoginPageLocators:
     INPUT_PASSWORD = (By.ID, "authorizationPassword")
     LOGIN_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
                               " CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")
+
+
+class ProfilePageLocators:
+    pass
+
+
+class ChangePasswordLocators:
+    CHANGE_PASSWORD_TITLE = "//h1[@class='ChangePassword_title__oV8hO']"
+    OLD_PASSWORD_TEXT_FIELD_HEADER = "//label[contains(text(), 'Old password')]"
+    NEW_PASSWORD_TEXT_FIELD_HEADER = "//label[contains(text(), 'New password')]"
+    CONFIRM_PASSWORD_TEXT_FIELD_HEADER = "//label[contains(text(), 'Confirm password')]"
+    OLD_PASSWORD_TEXT_FIELD = "//input[@id='changPasswordOld']"
+    NEW_PASSWORD_TEXT_FIELD = "//input[@id='changPasswordNew']"
+    CONFIRM_PASSWORD_TEXT_FIELD = "//input[@id='changPasswordConfirm']"
+    OLD_PASSWORD_WARNING_MESSAGE = "//div[@class='InputRoot_wrapper__sJ04b InputRoot_changePasswordForm__mTC_q']" \
+                                   "[1]//span[@class='ModalBase_errors__rYDQx']"
+    NEW_PASSWORD_WARNING_MESSAGE = "//div[@class='InputRoot_wrapper__sJ04b InputRoot_changePasswordForm__mTC_q']" \
+                                   "[2]//span[@class='ModalBase_errors__rYDQx']"
+    CONFIRM_PASSWORD_WARNING_MESSAGE = "//div[@class='InputRoot_wrapper__sJ04b']" \
+                                       "//span[@class='ModalBase_errors__rYDQx']"
+    CHANGE_BUTTON = "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 " \
+                    "CustomButton_btnWhiteChangePassword__LZikD']"
+    GO_BACK_BUTTON = "//button[@class='CustomButton_btn__22u2s CustomButton_colorBlack__4euz_ " \
+                     "CustomButton_btnBlackChangePassword__rVM_5']"
