@@ -1,6 +1,5 @@
 from Pages.BasePage import BasePage
 from Pages.locators import ChangePasswordLocators
-from Config.config import TestData
 
 
 class ChangePasswordPage(BasePage):

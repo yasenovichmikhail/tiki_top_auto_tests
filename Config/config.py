@@ -68,7 +68,7 @@ class HomeTestData:
                                             "Buy a subscription to keep your stats up to date. Become popular!"
     WHAT_DO_WE_OFFER_HEADER = "WHAT DO WE OFFER?"
 
-    WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON =
+    WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON = "Get  more info"
 
     WHAT_WE_HAVE_ALREADY_DONE_HEADER = "WHAT WE'VE ALREADY DONE"
 
@@ -81,6 +81,7 @@ class HomeTestData:
                                 "TikTok presence. Boost to the element of your choice immediately —be it likes, " \
                                 "views, and whatnot."
     ANY_QUESTIONS_MORE_INFO_BUTTON = "More info"
+
 
 class PricingTestData:
     PRICING_PAGE_TITLE = "Pricing | TikiTop"

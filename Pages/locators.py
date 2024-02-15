@@ -122,7 +122,22 @@ class LoginPageLocators:
 
 
 class ProfilePageLocators:
-    pass
+    PROFILE_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 "
+                                "CustomButton_btnSignUp__1ijqK ButtonHeaderProfile_button__756EG']")
+    YOUR_PROFILE_TITLE = "//h2[@class='AccountComponent_title__gZO_n']"
+    GENERAL_INFO_HEADER = "//h3[@class='UserProfile_title__LHdX8']"
+    PROFILE_EMAIL = "//p[@class='UserProfile_email__Cj0km']"
+    CHANGE_PASSWORD_BUTTON = "//a[@class='LinkButton_link___jzSK LinkButton_colorWhiteWithBorderAqua__S7MfE " \
+                             "LinkButton_sizeSmall__Leg3Q']"
+    LOG_OUT_BUTTON = "//a[@class='LinkButton_link___jzSK LinkButton_colorWhiteWithBorderAqua__S7MfE " \
+                     "LinkButton_sizeSmall__Leg3Q']"
+    MAKE_NEW_ORDER_BUTTON = "//a[@class='ButtonAddOrLink_wrapper__3G1F7 ButtonAddOrLink_typeImgSmall__CRumQ']"
+
+    SWIPE_NAVIGATION_BUTTON_RIGHT = "//button[@class='SwiperNavigation_btn__zZaKt SwiperNavigation_btnRight__yBkxG']"
+    SWIPE_NAVIGATION_BUTTON_LEFT = "//button[@class='SwiperNavigation_btn__zZaKt']"
+    SWIPE_NAVIGATION_BUTTON_RIGHT_DISABLED = "//button[@class='SwiperNavigation_btn__zZaKt " \
+                                             "SwiperNavigation_btnRight__yBkxG swiper-button-disabled']"
+    SWIPE_NAVIGATION_BUTTON_LEFT_DISABLED = "//button[@class='SwiperNavigation_btn__zZaKt swiper-button-disabled']"
 
 
 class ChangePasswordLocators:
