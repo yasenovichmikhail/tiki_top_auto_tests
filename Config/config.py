@@ -63,24 +63,85 @@ class HomeTestData:
     HOME_PAGE_TITLE = "Home | TikiTop"
     MAKE_AN_ORDER_BUTTON = "Make an order"
     HOW_IT_WORKS_BUTTON = "How it works?"
+
     BOOST_YOUR_TIKTOK_PROFILE_HEADER = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
     BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION = "Promote your new video to get it into people's recommendations. " \
                                             "Buy a subscription to keep your stats up to date. Become popular!"
-    WHAT_DO_WE_OFFER_HEADER = "WHAT DO WE OFFER?"
 
+    WHAT_DO_WE_OFFER_CONTAINER_HEADER = "WHAT DO WE OFFER?"
+    WHAT_DO_WE_OFFER_FOLLOWERS_HEADER = "Followers"
+    WHAT_DO_WE_OFFER_FOLLOWERS_DESCRIPTION = "Get active subscribers to your profile"
+    WHAT_DO_WE_OFFER_LIKES_HEADER = "Likes"
+    WHAT_DO_WE_OFFER_LIKES_DESCRIPTION = "Get likes on any of your videos with a deadline"
+    WHAT_DO_WE_OFFER_VIEWS_HEADER = "Views"
+    WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION = "Increase the number of views of your posts"
+    WHAT_DO_WE_OFFER_COMMENTS_HEADER = "Comments"
+    WHAT_DO_WE_OFFER_COMMENTS_DESCRIPTION = 'Get real comments like "Wow!!!" and "xD".'
+    WHAT_DO_WE_OFFER_SHARES_HEADER = "Shares"
+    WHAT_DO_WE_OFFER_SHARES_DESCRIPTION = "Make promotion more real for algorithms"
     WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON = "Get  more info"
+    WHAT_DO_WE_OFFER_TIKTOK_PROFILE_BOOSTING_HEADER = "We offer TikTok profile boosting at a fair price"
+    WHAT_DO_WE_OFFER_TIKTOK_PROFILE_BOOSTING_DESCRIPTION_1 = "Our services offer high-end promotion packages whose " \
+                                                             "destiny is to power-up your TikTok presence. Boost to " \
+                                                             "the element of your choice immediately —be it likes, " \
+                                                             "views, and whatnot."
+    WHAT_DO_WE_OFFER_TIKTOK_PROFILE_BOOSTING_DESCRIPTION_2 = "We have tried to develop a system that best suits the " \
+                                                             "requirements of TikTok users. Remember, we are on your " \
+                                                             "side! Start today, and see positive results in no time!"
 
-    WHAT_WE_HAVE_ALREADY_DONE_HEADER = "WHAT WE'VE ALREADY DONE"
+    WHAT_WE_HAVE_DONE_CONTAINER_HEADER = "WHAT WE'VE ALREADY DONE"
+    WHAT_WE_HAVE_DONE_ORDERS_HEADER = "137 orders"
+    WHAT_WE_HAVE_DONE_ORDERS_DESCRIPTION = "have been placed for the entire time of our service"
+    WHAT_WE_HAVE_DONE_LIKES_HEADER = "391K likes"
+    WHAT_WE_HAVE_DONE_LIKES_DESCRIPTION = "were clicked under our customers' videos"
+    WHAT_WE_HAVE_DONE_FOLLOWERS_HEADER = "27K followers"
+    WHAT_WE_HAVE_DONE_FOLLOWERS_DESCRIPTION = "subscribed since the launch of the project"
+    WHAT_WE_HAVE_DONE_VIEWS_HEADER = "328K views"
+    WHAT_WE_HAVE_DONE_VIEWS_DESCRIPTION = "were received on our users' videos"
 
-    PROMOTION_FORMATS_HEADER = "PROMOTION FORMATS"
+    PROMOTION_FORMATS_CONTAINER_HEADER = "PROMOTION FORMATS"
+    PROMOTION_FORMATS_SUBSCRIPTION_PLAN_HEADER = "Subscription plan"
+    PROMOTION_FORMATS_SUBSCRIPTION_PLAN_DESCRIPTION = "Subscribe for the plan to get consistent activity on your " \
+                                                      "profile during the month."
+    PROMOTION_FORMATS_STANDARD_ORDERS_HEADER = "Standart orders"
+    PROMOTION_FORMATS_STANDARD_ORDERS_DESCRIPTION = "Promote your profile or your specific videos within a selected " \
+                                                    "time frame."
+    PROMOTION_FORMATS_WANT_LEARN_MORE_HEADER = "Want to learn more?"
+    PROMOTION_FORMATS_WANT_LEARN_MORE_DESCRIPTION = "Explore more opportunities to boost your TikTok account!"
+    PROMOTION_FORMATS_GET_MORE_INFO_BUTTON = "Get more info"
+    PROMOTION_FORMATS_ONE_STORY_HEADER = "The story of one subscription"
+    PROMOTION_FORMATS_ONE_STORY_NAME = "Edward"
+    PROMOTION_FORMATS_ONE_STORY_REVIEW = "Hi! A couple of months ago I got myself a subscription. I want to share " \
+                                         "my experience with you"
+    PROMOTION_FORMATS_ONE_STORY_STEP_1_HEADER = "Get the plan"
+    PROMOTION_FORMATS_ONE_STORY_STEP_1_DESCRIPTION = "Choose the plan you want and pay monthly"
+    PROMOTION_FORMATS_ONE_STORY_STEP_2_HEADER = "Post the video"
+    PROMOTION_FORMATS_ONE_STORY_STEP_2_DESCRIPTION = "You must publish at least one video to promote them"
+    PROMOTION_FORMATS_ONE_STORY_STEP_3_HEADER = "Get subscribers"
+    PROMOTION_FORMATS_ONE_STORY_STEP_3_DESCRIPTION = "People will subscribe to you evenly within a month"
+    PROMOTION_FORMATS_ONE_STORY_STEP_4_HEADER = "Get promotion for your videos"
+    PROMOTION_FORMATS_ONE_STORY_STEP_4_DESCRIPTION = "Every day we will boost 5 of your latest videos"
 
-    OUR_CLIENTS_TRUST_US_HEADER = "OUR CLIENTS TRUST US"
+    OUR_CLIENTS_TRUST_US_CONTAINER_HEADER = "OUR CLIENTS TRUST US"
+    OUR_CLIENTS_TRUST_US_PEACE_OF_MIND_HEADER = "Total Peace of Mind"
+    OUR_CLIENTS_TRUST_US_PEACE_OF_MIND_DESCRIPTION = "The whole process is automated. You don't have to do anything " \
+                                                     "except post your videos"
+    OUR_CLIENTS_TRUST_US_AUTOMATIC_BOOST_HEADER = "Automatic Boost"
+    OUR_CLIENTS_TRUST_US_AUTOMATIC_BOOST_DESCRIPTION = "Subscription promotion format automatically promotes all " \
+                                                       "your new videos"
+    OUR_CLIENTS_TRUST_US_PERSONAL_PROFILE_HEADER = "Personal Profile"
+    OUR_CLIENTS_TRUST_US_PERSONAL_PROFILE_DESCRIPTION = "Link up to 10 TikTok accounts and set their subscriptions, " \
+                                                        "save orders and manage them"
+    OUR_CLIENTS_TRUST_US_CANCEL_ANYTIME_HEADER = "Cancel at Anytime"
+    OUR_CLIENTS_TRUST_US_CANCEL_ANYTIME_DESCRIPTION = "Disable and cancel the promotion at any time. It will " \
+                                                      "stop instantly"
 
-    ANY_QUESTIONS_HEADER = "ANY QUESTIONS?"
+    ANY_QUESTIONS_CONTAINER_HEADER = "ANY QUESTIONS?"
     ANY_QUESTIONS_DESCRIPTION = "Our services offer high-end promotion packages whose destiny is to power-up your " \
                                 "TikTok presence. Boost to the element of your choice immediately —be it likes, " \
                                 "views, and whatnot."
     ANY_QUESTIONS_MORE_INFO_BUTTON = "More info"
+    ANY_QUESTIONS_CONTACT_US_BUTTON = "Contact us"
 
 
 class PricingTestData:
