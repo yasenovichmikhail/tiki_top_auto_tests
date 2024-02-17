@@ -34,19 +34,19 @@ class BasePage:
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).text
         return element
 
-    def find_element(self, how, what):
-        return self.driver.find_element(how, what)
+    def find_element(self, locator):
+        return self.driver.find_element(*locator)
 
-    def is_element_present(self, how, what):
+    def is_element_present(self, locator):
         try:
-            self.driver.find_element(how, what)
+            self.driver.find_element(*locator)
         except NoSuchElementException:
             return False
         return True
 
-    def is_not_element_present(self, how, what, timeout=4):
+    def is_not_element_present(self, locator, timeout=4):
         try:
-            WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((how, what)))
+            WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(*locator))
         except TimeoutException:
             return True
         return False
@@ -72,24 +72,24 @@ class BasePage:
     def switch_out_iframe(self):
         self.driver.switch_to.default_content()
 
-    def scroll(self, how, what):
-        element = self.driver.find_element(how, what)
+    def scroll(self, locator):
+        element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def is_signup_button_exist(self):
-        assert self.is_element_present(*BasePageLocators.SIGNUP_BUTTON), "Sign Up button is not presented"
+        assert self.is_element_present(BasePageLocators.SIGNUP_BUTTON), "Sign Up button is not presented"
 
     def is_header_visible(self):
-        assert self.is_element_present(*BasePageLocators.HEADER), "Header is not presented"
+        assert self.is_element_present(BasePageLocators.HEADER), "Header is not presented"
 
     def is_footer_visible(self):
-        assert self.is_element_present(*BasePageLocators.FOOTER), "Footer is not presented"
+        assert self.is_element_present(BasePageLocators.FOOTER), "Footer is not presented"
 
     def is_header_logo_visible(self):
-        assert self.is_element_present(*BasePageLocators.HEADER_LOGO), "Header logo is not presented"
+        assert self.is_element_present(BasePageLocators.HEADER_LOGO), "Header logo is not presented"
 
     def is_get_free_views_visible(self):
-        assert self.is_element_present(*BasePageLocators.GET_FREE_VIEWS), "Get free views is not presented"
+        assert self.is_element_present(BasePageLocators.GET_FREE_VIEWS_PANEL), "Get free views is not presented"
 
     def go_to_home_page_from_header_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.HOME_LINK_HEADER)

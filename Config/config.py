@@ -61,13 +61,14 @@ class TestData:
 
 class HomeTestData:
     HOME_PAGE_TITLE = "Home | TikiTop"
-    MAKE_AN_ORDER_BUTTON = "Make an order"
-    HOW_IT_WORKS_BUTTON = "How it works?"
 
     BOOST_YOUR_TIKTOK_PROFILE_HEADER = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
     BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION = "Promote your new video to get it into people's recommendations. " \
                                             "Buy a subscription to keep your stats up to date. Become popular!"
-
+    MAKE_AN_ORDER_BUTTON = "Make an order"
+    HOW_IT_WORKS_BUTTON = "How it works?"
+    SIGN_UP_AND_GET_FREE_VIEWS = "//span[@class='HeaderBottomWrapper_signUpLabel__7vxLw']"
+    FREE_VIEWS = "//span[@class='HeaderBottomWrapper_freeLabel__VLBOU']"
     WHAT_DO_WE_OFFER_CONTAINER_HEADER = "WHAT DO WE OFFER?"
     WHAT_DO_WE_OFFER_FOLLOWERS_HEADER = "Followers"
     WHAT_DO_WE_OFFER_FOLLOWERS_DESCRIPTION = "Get active subscribers to your profile"

@@ -1,5 +1,6 @@
 import time
 
+import pytest
 from selenium.webdriver.common.by import By
 
 from Config.config import TestData, ContactUsTestData, HomeTestData, PricingTestData, FaqTestData
@@ -12,13 +13,24 @@ class HomePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(TestData.BASE_URL)
+#        self.driver.get(TestData.BASE_URL)
 
     """Page Actions"""
 
     def check_home_page_title(self):
         title = self.get_title()
         assert title == HomeTestData.HOME_PAGE_TITLE, "Title doesn't match"
+
+    def is_boost_your_profile_container_presented(self):
+        assert self.is_element_present(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_CONTAINER), \
+            "Boost your profile container is not presented"
+        actual_header = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_HEADER)
+        expected_header = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
+        actual_description = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION)
+        expected_description = "Promote your new video to get it into people's recommendations. " \
+                               "Buy a subscription to keep your stats up to date. Become popular!"
+        assert actual_header == expected_header, f"expected {expected_header}, got {actual_header}"
+        assert actual_description == expected_description, f"expected {expected_description}, got {actual_description}"
 
     def is_make_an_order_button_presented(self):
         actual_button_name = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
@@ -31,17 +43,6 @@ class HomePage(BasePage):
         expected_button_name = "How it works?"
         assert self.is_element_present(*HomePageLocators.HOW_IT_WORKS_BUTTON), "How it works button is not presented"
         assert actual_button_name == expected_button_name, f"expected {expected_button_name}, got {actual_button_name}"
-
-    def is_boost_your_profile_container_presented(self):
-        assert self.is_element_present(*HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_CONTAINER), "Boost your profile " \
-                                                                                              "section is not presented"
-        actual_header = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_HEADER)
-        expected_header = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
-        actual_description = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION)
-        expected_description = "Promote your new video to get it into people's recommendations. " \
-                               "Buy a subscription to keep your stats up to date. Become popular!"
-        assert actual_header == expected_header, f"expected {expected_header}, got {actual_header}"
-        assert actual_description == expected_description, f"expected {expected_description}, got {actual_description}"
 
     def is_what_do_we_offer_container_presented(self):
         assert self.is_element_present(*HomePageLocators.WHAT_DO_WE_OFFER_CONTAINER), "What do we offer " \

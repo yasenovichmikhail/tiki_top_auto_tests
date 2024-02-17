@@ -7,7 +7,7 @@ class BasePageLocators:
     HEADER_LOGO = (By.XPATH, "//a[@class='HeaderLogo_link__w6i5r']")
     HEADER = (By.XPATH, "//div[@class='HeaderTopWrapper_topWrapper__wcGqJ']")
     FOOTER = (By.XPATH, "//nav[@class='FooterNav_container__TNimz']")
-    GET_FREE_VIEWS = (By.XPATH, "//div[@class='HeaderBottomWrapper_bottomWrapper__w2dKr']")
+    GET_FREE_VIEWS_PANEL = (By.XPATH, "//div[@class='HeaderBottomWrapper_bottomWrapper__w2dKr']")
     HOME_LINK_HEADER = (By.XPATH, "//div//header//ul//li[1]")
     PRICING_LINK_HEADER = (By.XPATH, "//div//header//ul//li[2]")
     FAQ_LINK_HEADER = (By.XPATH, "//div//header//ul//li[3]")
@@ -32,12 +32,12 @@ class BasePageLocators:
 
 
 class HomePageLocators:
-    MAKE_AN_ORDER_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed2__33NJf']")
-    HOW_IT_WORKS_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 HeaderOffer"
-                                     "_howItWorkButton__ajwBM']")
     BOOST_YOUR_TIKTOK_PROFILE_CONTAINER = (By.XPATH, "//section[@class='container HeaderOffer_headerOffer__0Nk4c']")
     BOOST_YOUR_TIKTOK_PROFILE_HEADER = (By.XPATH, "//h1[@class='HeaderOffer_title__XSSqh']")
     BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION = (By.XPATH, "//p[@class='HeaderOffer_description__0i_t7']")
+    MAKE_AN_ORDER_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed2__33NJf']")
+    HOW_IT_WORKS_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 HeaderOffer"
+                                     "_howItWorkButton__ajwBM']")
     WHAT_DO_WE_OFFER_CONTAINER = (By.XPATH, "//section[@class='container'][1]")
     WHAT_DO_WE_OFFER_HEADER = (By.XPATH, "//h2[@class='OurOffer_title__dM8j1']")
     WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed__y2rlJ"
