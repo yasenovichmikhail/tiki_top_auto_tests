@@ -25,12 +25,17 @@ class HomePage(BasePage):
         assert self.is_element_present(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_CONTAINER), \
             "Boost your profile container is not presented"
         actual_header = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_HEADER)
-        expected_header = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
         actual_description = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION)
-        expected_description = "Promote your new video to get it into people's recommendations. " \
-                               "Buy a subscription to keep your stats up to date. Become popular!"
-        assert actual_header == expected_header, f"expected {expected_header}, got {actual_header}"
-        assert actual_description == expected_description, f"expected {expected_description}, got {actual_description}"
+        actual_make_an_order_button = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
+        actual_how_it_works_button = self.get_element_text(HomePageLocators.HOW_IT_WORKS_BUTTON)
+        assert actual_header == HomeTestData.BOOST_YOUR_TIKTOK_PROFILE_HEADER, \
+            f"expected {HomeTestData.BOOST_YOUR_TIKTOK_PROFILE_HEADER}, got {actual_header}"
+        assert actual_description == HomeTestData.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION, \
+            f"expected {HomeTestData.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION}, got {actual_description}"
+        assert actual_make_an_order_button == HomeTestData.MAKE_AN_ORDER_BUTTON, \
+            f"expected {HomeTestData.MAKE_AN_ORDER_BUTTON}, got {actual_make_an_order_button}"
+        assert actual_how_it_works_button == HomeTestData.HOW_IT_WORKS_BUTTON, \
+            f"expected {HomeTestData.HOW_IT_WORKS_BUTTON}, got {actual_how_it_works_button}"
 
     def is_make_an_order_button_presented(self):
         actual_button_name = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
