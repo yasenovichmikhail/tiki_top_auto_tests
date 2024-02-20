@@ -114,11 +114,32 @@ class ContactUsPageLocators:
 class LoginPageLocators:
     SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
                                " CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
+    SIGNUP_TAB = (By.XPATH, "//label[@class='AuthorizationTypeItem_label__DBPDq']")
     LOGIN_TAB = (By.XPATH, "//div[@class='AuthorizationTypeItem_item__2IwVY'][2]")
+    GOOGLE_AUTH_BUTTON = (By.XPATH, "//button[@class='AuthorizationServices_btnLogin__txbzD "
+                                    "AuthorizationServices_iconGoogle__4dy0a']")
+    FACEBOOK_AUTH_BUTTON = (By.XPATH, "//button[@class='AuthorizationServices_btnLogin__txbzD "
+                                      "AuthorizationServices_iconFacebook__0Fg5_']")
     INPUT_EMAIL = (By.ID, "authorizationEmail")
+    FORGOT_PASSWORD_BUTTON = (By.XPATH, "//button[@class='InputRoot_btnForgot__1AugM']")
     INPUT_PASSWORD = (By.ID, "authorizationPassword")
+    SHOW_PASSWORD_ICON = (By.XPATH, "//div[@class='InputRoot_imgPassword__8Xy0k']")
+    HIDE_PASSWORD_ICON = (By.XPATH, "//div[@class='InputRoot_imgPassword__8Xy0k InputRoot_imgPasswordVisible__xlKE6']")
+    CREATE_MY_ACCOUNT_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 "
+                                          "CustomButton_typeAuth__m__ns']")
     LOGIN_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
                               " CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")
+    CLOSE_LOGIN_PAGE_BUTTON = (By.XPATH, "//button[@class='ButtonClose_btn__rSXPy ButtonClose_btnDefault__3PgA1']")
+
+
+class ForgotPasswordPageLocators:
+    FORGOT_PASSWORD_FORM_HEADER = (By.XPATH, "//h3[@class='ModalBase_title__AecGk']")
+    FORGOT_PASSWORD_FORM_DESCRIPTION = (By.XPATH, "//p[@class='ModalBase_forgotDescription__k5jiI']")
+    YOUR_EMAIL_FIELD = (By.XPATH, "//input[@class='InputRoot_input__kEGzu InputRoot_inputForgot__UUMj1']")
+    INVALID_EMAIL_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
+    SUBMIT_EMAIL_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorBlack__4euz_ "
+                                     "CustomButton_btnForgot__rBSRC']")
+    CLOSE_FORGOT_PASSWORD_BUTTON = (By.XPATH, "//*[@id='__next']/div/header/div[3]/div/div[5]/div/button")
 
 
 class ProfilePageLocators:

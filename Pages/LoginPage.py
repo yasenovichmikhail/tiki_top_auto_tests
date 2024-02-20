@@ -57,7 +57,9 @@ class LoginPage(BasePage):
         self.click(LoginPageLocators.CLOSE_LOGIN_PAGE_BUTTON)
 
     def login(self):
-        self.click_sign_up_tab()
-        self.set_email(TestData.USER_EMAIL)
-        self.set_password(TestData.PASSWORD)
-        self.click_create_my_account_button()
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_login_tab()
+        page.set_email(TestData.USER_EMAIL)
+        page.set_password(TestData.PASSWORD)
+        page.click_login_button()
