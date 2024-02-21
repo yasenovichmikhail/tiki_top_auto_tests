@@ -137,9 +137,13 @@ class ForgotPasswordPageLocators:
     FORGOT_PASSWORD_FORM_DESCRIPTION = (By.XPATH, "//p[@class='ModalBase_forgotDescription__k5jiI']")
     YOUR_EMAIL_FIELD = (By.XPATH, "//input[@class='InputRoot_input__kEGzu InputRoot_inputForgot__UUMj1']")
     INVALID_EMAIL_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
-    SUBMIT_EMAIL_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorBlack__4euz_ "
+    NOT_REGISTERED_EMAIL_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
+    SUBMIT_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorBlack__4euz_ "
                                      "CustomButton_btnForgot__rBSRC']")
     CLOSE_FORGOT_PASSWORD_BUTTON = (By.XPATH, "//*[@id='__next']/div/header/div[3]/div/div[5]/div/button")
+    SUCCESS_FORM_HEADER = (By.XPATH, "//h3[@class='ModalDescriptionMessage_title__6hSBQ']")
+    SUCCESS_FORM_DESCRIPTION_1 = (By.XPATH, "//p[@class='ModalDescriptionMessage_discription__FcfFh']")
+    SUCCESS_FORM_DESCRIPTION_2 = (By.XPATH, "//p[@class='ModalDescriptionMessage_spam__k8MM0']")
 
 
 class ProfilePageLocators:
