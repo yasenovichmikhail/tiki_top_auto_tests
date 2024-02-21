@@ -8,7 +8,7 @@ import string as s
 
 class TestData:
     BASE_URL = "https://tikitop.io/"
-    USER_NAME = "bobbyngayer@gmail.com"
+    USER_EMAIL = "bobbyngayer@gmail.com"
     PASSWORD = "qwertyasd"
 
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
@@ -199,3 +199,31 @@ class ContactUsTestData:
 
 class ProfileTestData:
     PROFILE_PAGE_TITLE = "Account | TikiTop"
+
+
+class ChangePasswordTestData:
+    CHANGE_PASSWORD_TITLE = "Creating a password"
+    OLD_PASSWORD_TEXT_FIELD_HEADER = "Old password"
+    NEW_PASSWORD_TEXT_FIELD_HEADER = "New password"
+    CONFIRM_PASSWORD_TEXT_FIELD_HEADER = "Confirm password"
+    OLD_PASSWORD_PLACEHOLDER = "old password"
+    NEW_PASSWORD_TEXT_PLACEHOLDER = "new password"
+    CONFIRM_PASSWORD_PLACEHOLDER = "confirm password"
+    OLD_PASSWORD_WARNING_MESSAGE = "Wrong password"
+    NEW_PASSWORD_WARNING_MESSAGE =
+    CONFIRM_PASSWORD_WARNING_MESSAGE =
+    CHANGE_BUTTON =
+    GO_BACK_BUTTON =
+
+
+class ForgotPasswordTestData:
+    FORGOT_PASSWORD_FORM_HEADER = "Enter your email"
+    FORGOT_PASSWORD_FORM_DESCRIPTION = "We will send the password recovery link"
+    YOUR_EMAIL_FIELD_PLACEHOLDER = "Your email"
+    INVALID_EMAIL_WARNING = "Input valid email"
+    NOT_REGISTERED_EMAIL_WARNING = "The user is not registered or activate the mail"
+    SUBMIT_EMAIL_BUTTON = "Submit"
+    SUCCESS_FORM_HEADER = "We’ve sent you a link"
+#    SUCCESS_FORM_DESCRIPTION_1 = "Email with a link to change your password has been sent to"
+    SUCCESS_FORM_DESCRIPTION_2 = "(Please, check your spam box If you haven’t received our email with a link " \
+                                 "within the next 5 minutes)"

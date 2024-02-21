@@ -7,11 +7,12 @@ from Tests.test_base import BaseTest
 
 class TestLogin(BaseTest):
 
-    def test_signup_button_visible(self):
-        page = LoginPage(self.driver)
-        page.is_signup_button_exist()
-
     def test_login(self):
         page = LoginPage(self.driver)
-        page.login(TestData.USER_NAME, TestData.PASSWORD)
+        page.open_login_form()
+        page.click_login_tab()
+        page.set_email(TestData.USER_EMAIL)
+        page.set_password(TestData.PASSWORD)
+        page.click_login_button()
+
 

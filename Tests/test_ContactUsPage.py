@@ -54,7 +54,7 @@ class TestContactUsGeneral(BaseTest):
     def test_guest_can_see_get_free_views_from_contact_us_page(self):
         page = ContactUsPage(self.driver)
         page.is_get_free_views_visible()
-    @pytest.mark.smoke
+
     def test_guest_can_see_get_in_touch_container_form(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
