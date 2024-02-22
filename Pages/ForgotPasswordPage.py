@@ -1,9 +1,9 @@
 from Pages.BasePage import BasePage
-from Config.config import ForgotPasswordData, TestData
+from Config.config import ForgotPasswordTestData, TestData
 from Pages.locators import ForgotPasswordPageLocators
 
 
-class FaqPage(BasePage):
+class ForgotPasswordPage(BasePage):
     """Constructor of the page class"""
 
     def __init__(self, driver):
