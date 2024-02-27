@@ -1,5 +1,5 @@
 from Pages.BasePage import BasePage
-from Config.config import ForgotPasswordTestData, TestData
+from Config.config import ForgotPasswordPageData, TestData
 from Pages.locators import ForgotPasswordPageLocators
 
 

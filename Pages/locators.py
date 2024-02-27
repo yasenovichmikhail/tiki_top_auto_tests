@@ -173,12 +173,11 @@ class ChangePasswordLocators:
     OLD_PASSWORD_TEXT_FIELD = "//input[@id='changPasswordOld']"
     NEW_PASSWORD_TEXT_FIELD = "//input[@id='changPasswordNew']"
     CONFIRM_PASSWORD_TEXT_FIELD = "//input[@id='changPasswordConfirm']"
-    OLD_PASSWORD_WARNING_MESSAGE = "//div[@class='InputRoot_wrapper__sJ04b InputRoot_changePasswordForm__mTC_q']" \
-                                   "[1]//span[@class='ModalBase_errors__rYDQx']"
-    NEW_PASSWORD_WARNING_MESSAGE = "//div[@class='InputRoot_wrapper__sJ04b InputRoot_changePasswordForm__mTC_q']" \
-                                   "[2]//span[@class='ModalBase_errors__rYDQx']"
-    CONFIRM_PASSWORD_WARNING_MESSAGE = "//div[@class='InputRoot_wrapper__sJ04b']" \
-                                       "//span[@class='ModalBase_errors__rYDQx']"
+    WRONG_OLD_PASSWORD_WARNING = "//div[@class='InputRoot_wrapper__sJ04b InputRoot_changePasswordForm__mTC_q']" \
+                                 "[1]//span[@class='ModalBase_errors__rYDQx']"
+    MIN_CHARACTERS_WARNING = ""
+    NOT_SAME_NEW_PASSWORD_WARNING = ""
+    REQUIRED_FIELD_WARNING = ""
     CHANGE_BUTTON = "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 " \
                     "CustomButton_btnWhiteChangePassword__LZikD']"
     GO_BACK_BUTTON = "//button[@class='CustomButton_btn__22u2s CustomButton_colorBlack__4euz_ " \
