@@ -59,7 +59,19 @@ class TestData:
         return message
 
 
-class HomeTestData:
+class BasePageData:
+    HOME_LINK = "Home"
+    PRICING_LINK = "Pricing"
+    FAQ_LINK = "FAQ"
+    CONTACT_US_LINK = "Contact Us"
+    LEARN_LINK = "Learn"
+    PRIVACY_POLICY_LINK = "Privacy Policy"
+    TERMS_CONDITIONS_LINK = "Terms & Conditions"
+    EMAIL_ADDRESS_LINK = "tikitop.team@gmail.com"
+    TELEGRAM_LINK = "@tikitop_support"
+
+
+class HomePageData:
     HOME_PAGE_TITLE = "Home | TikiTop"
 
     BOOST_YOUR_TIKTOK_PROFILE_HEADER = "BOOST YOUR TIKTOK PROFILE & VIDEOS"
@@ -145,11 +157,11 @@ class HomeTestData:
     ANY_QUESTIONS_CONTACT_US_BUTTON = "Contact us"
 
 
-class PricingTestData:
+class PricingPageData:
     PRICING_PAGE_TITLE = "Pricing | TikiTop"
 
 
-class FaqTestData:
+class FaqPageData:
     FAQ_PAGE_TITLE = "FAQ | TikiTop"
     POPULAR_QUESTIONS_HEADER = "POPULAR QUESTIONS"
     FIRST_QUESTION_HEADER = "Is it safe to promote from you?"
@@ -178,7 +190,7 @@ class FaqTestData:
     EIGHTH_QUESTION_DESCRIPTION = "Yes, you can, but you have to do it with different categories."
 
 
-class ContactUsTestData:
+class ContactUsPageData:
     CONTACT_US_PAGE_TITLE = "Contact us | TikiTop"
     GET_IN_TOUCH_HEADER = "GET IN TOUCH"
     GET_IN_TOUCH_DESCRIPTION = "Have any questions? We'd love to hear from you"
@@ -197,11 +209,11 @@ class ContactUsTestData:
     SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
 
 
-class ProfileTestData:
+class ProfilePageData:
     PROFILE_PAGE_TITLE = "Account | TikiTop"
 
 
-class ChangePasswordTestData:
+class ChangePasswordPageData:
     CHANGE_PASSWORD_TITLE = "Creating a password"
     OLD_PASSWORD_TEXT_FIELD_HEADER = "Old password"
     NEW_PASSWORD_TEXT_FIELD_HEADER = "New password"
@@ -209,14 +221,15 @@ class ChangePasswordTestData:
     OLD_PASSWORD_PLACEHOLDER = "old password"
     NEW_PASSWORD_TEXT_PLACEHOLDER = "new password"
     CONFIRM_PASSWORD_PLACEHOLDER = "confirm password"
-    OLD_PASSWORD_WARNING_MESSAGE = "Wrong password"
-    NEW_PASSWORD_WARNING_MESSAGE =
-    CONFIRM_PASSWORD_WARNING_MESSAGE =
-    CHANGE_BUTTON =
-    GO_BACK_BUTTON =
+    WRONG_OLD_PASSWORD_WARNING_MESSAGE = "Wrong password"
+    MIN_CHARACTERS_WARNING = "must be 7 or more characters"
+    NOT_SAME_NEW_PASSWORD_WARNING = "The passwords are not the same"
+    REQUIRED_FIELD_WARNING = "Required"
+    CHANGE_BUTTON = "Change"
+    GO_BACK_BUTTON = "Go back"
 
 
-class ForgotPasswordTestData:
+class ForgotPasswordPageData:
     FORGOT_PASSWORD_FORM_HEADER = "Enter your email"
     FORGOT_PASSWORD_FORM_DESCRIPTION = "We will send the password recovery link"
     YOUR_EMAIL_FIELD_PLACEHOLDER = "Your email"
