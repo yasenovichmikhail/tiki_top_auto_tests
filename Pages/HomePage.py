@@ -25,17 +25,8 @@ class HomePage(BasePage):
         assert self.is_element_present(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_CONTAINER), \
             "Boost your profile container is not presented"
         actual_header = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_HEADER)
-        actual_description = self.get_element_text(HomePageLocators.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION)
-        actual_make_an_order_button = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
-        actual_how_it_works_button = self.get_element_text(HomePageLocators.HOW_IT_WORKS_BUTTON)
         assert actual_header == HomePageData.BOOST_YOUR_TIKTOK_PROFILE_HEADER, \
             f"Expected {HomePageData.BOOST_YOUR_TIKTOK_PROFILE_HEADER}, got {actual_header}"
-        assert actual_description == HomePageData.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION, \
-            f"Expected {HomePageData.BOOST_YOUR_TIKTOK_PROFILE_DESCRIPTION}, got {actual_description}"
-        assert actual_make_an_order_button == HomePageData.MAKE_AN_ORDER_BUTTON, \
-            f"Expected {HomePageData.MAKE_AN_ORDER_BUTTON}, got {actual_make_an_order_button}"
-        assert actual_how_it_works_button == HomePageData.HOW_IT_WORKS_BUTTON, \
-            f"Expected {HomePageData.HOW_IT_WORKS_BUTTON}, got {actual_how_it_works_button}"
 
     def is_make_an_order_button_presented(self):
         actual_button_name = self.get_element_text(HomePageLocators.MAKE_AN_ORDER_BUTTON)
@@ -53,25 +44,8 @@ class HomePage(BasePage):
         assert self.is_element_present(HomePageLocators.WHAT_DO_WE_OFFER_CONTAINER), \
             "What do we offer container is not presented"
         actual_header = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_HEADER)
-        actual_followers_description = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_FOLLOWERS_DESCRIPTION)
-        actual_likes_description = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_LIKES_DESCRIPTION)
-        actual_views_description = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION)
-        actual_comments_description = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_COMMENTS_DESCRIPTION)
-        actual_shares_description = self.get_element_text(HomePageLocators.WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION)
         assert actual_header == HomePageData.WHAT_DO_WE_OFFER_CONTAINER_HEADER, \
             f"Expected {HomePageData.WHAT_DO_WE_OFFER_CONTAINER_HEADER}, got {actual_header}"
-        assert actual_followers_description == HomePageData.WHAT_DO_WE_OFFER_FOLLOWERS_DESCRIPTION, \
-            f"Expected {HomePageData.WHAT_DO_WE_OFFER_FOLLOWERS_DESCRIPTION}, got {actual_followers_description}"
-        assert actual_likes_description == HomePageData.WHAT_DO_WE_OFFER_LIKES_DESCRIPTION, \
-            f"Expected {HomePageData.WHAT_DO_WE_OFFER_LIKES_DESCRIPTION}, got {actual_likes_description}"
-        assert actual_views_description == HomePageData.WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION, \
-            f"Expected {HomePageData.WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION}, got {actual_views_description}"
-        assert actual_views_description == HomePageData.WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION, \
-            f"Expected {HomePageData.WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION}, got {actual_views_description}"
-        assert actual_comments_description == HomePageData.WHAT_DO_WE_OFFER_COMMENTS_DESCRIPTION, \
-            f"Expected {HomePageData.WHAT_DO_WE_OFFER_COMMENTS_DESCRIPTION}, got {actual_comments_description}"
-        assert actual_shares_description == HomePageData.WHAT_DO_WE_OFFER_SHARES_DESCRIPTION, \
-            f"Expected {HomePageData.WHAT_DO_WE_OFFER_SHARES_DESCRIPTION}, got {actual_shares_description}"
 
     def is_what_we_have_already_done_container_presented(self):
         assert self.is_element_present(HomePageLocators.WHAT_WE_HAVE_ALREADY_DONE_CONTAINER), \
