@@ -42,6 +42,11 @@ class HomePageLocators:
     WHAT_DO_WE_OFFER_HEADER = (By.XPATH, "//h2[@class='OurOffer_title__dM8j1']")
     WHAT_DO_WE_OFFER_GET_MORE_INFO_BUTTON = (By.XPATH, "//a[@class='LinkButton_link___jzSK LinkButton_colorRed__y2rlJ"
                                                        " LinkButton_sizeBig__7aVP_']")
+    WHAT_DO_WE_OFFER_FOLLOWERS_DESCRIPTION = (By.XPATH, "//div[1]/div[1]/div/p")
+    WHAT_DO_WE_OFFER_LIKES_DESCRIPTION = (By.XPATH, "//div[1]/div[2]/div/p")
+    WHAT_DO_WE_OFFER_VIEWS_DESCRIPTION = (By.XPATH, "//div[1]/div[3]/div/p")
+    WHAT_DO_WE_OFFER_COMMENTS_DESCRIPTION = (By.XPATH, "//div[1]/div[4]/div/p")
+    WHAT_DO_WE_OFFER_SHARES_DESCRIPTION = (By.XPATH, "//div[1]/div[5]/div/p")
     WHAT_WE_HAVE_ALREADY_DONE_CONTAINER = (By.XPATH, "//section[@class='container DoneOrders_container__aI7tA']")
     WHAT_WE_HAVE_ALREADY_DONE_HEADER = (By.XPATH, "//h2[@class='DoneOrders_title__StHjc']")
     PROMOTION_FORMATS_CONTAINER = (By.XPATH, "//section[@class='container'][2]")
