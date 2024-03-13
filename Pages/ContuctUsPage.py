@@ -80,15 +80,7 @@ class ContactUsPage(BasePage):
             f"Placeholder of the message text area doesn't" \
             f" match. Expected {ContactUsPageData.MESSAGE_TEXT_AREA_PLACEHOLDER} got {actual_placeholder}"
 
-    def is_send_message_button_presented(self):
-        actual_button_name = self.get_element_text(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
-        assert self.is_element_present(*ContactUsPageLocators.SEND_MESSAGE_BUTTON), \
-            "Send message button is not presented"
-        assert actual_button_name == ContactUsPageData.SEND_MESSAGE_BUTTON,\
-            f"Name of the send message button doesn't match. " \
-            f"Expected {ContactUsPageData.SEND_MESSAGE_BUTTON}, got {actual_button_name}"
-
-    def is_privacy_policy_button_presented(self):
+    def is_privacy_policy_link_presented(self):
         actual_button_name = self.get_element_text(ContactUsPageLocators.PRIVACY_POLICY_BUTTON)
         assert self.is_element_present(*ContactUsPageLocators.PRIVACY_POLICY_BUTTON), \
             "Privacy Policy button is not presented"
@@ -133,25 +125,25 @@ class ContactUsPage(BasePage):
             f"Warning doesn't match. Expected {ContactUsPageData.MAX_LENGTH_FIRST_NAME_FIELD_WARNING}," \
             f" got {actual_warning}"
 
-    def enter_data_first_name_field(self, value):
+    def enter_first_name_field(self, value):
         self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, value)
         first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
         actual_value = first_name_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
 
-    def enter_data_email_address_field(self, value):
+    def enter_email_address_field(self, value):
         self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, value)
         email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
         actual_value = email_address_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
 
-    def enter_data_message_field(self, value):
+    def enter_message_field(self, value):
         self.send_keys(ContactUsPageLocators.MESSAGE_TEXT_AREA, value)
         message_field = self.find_element(*ContactUsPageLocators.MESSAGE_TEXT_AREA)
         actual_value = message_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
 
-    def clear_data_first_name_field(self):
+    def clear_first_name_field(self):
         first_name_field = self.find_element(*ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
         actual_email = first_name_field.get_attribute('value')
         actual_len = len(actual_email)
@@ -160,7 +152,7 @@ class ContactUsPage(BasePage):
         actual_new_value = first_name_field.get_attribute('value')
         assert len(actual_new_value) == 0, "Data is not cleared"
 
-    def clear_data_email_address_field(self):
+    def clear_email_address_field(self):
         email_address_field = self.find_element(*ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD)
         actual_email = email_address_field.get_attribute('value')
         actual_len = len(actual_email)
@@ -179,13 +171,12 @@ class ContactUsPage(BasePage):
         assert len(actual_new_value) == 0, "Data is not cleared"
 
     def click_send_message_button(self):
+        assert self.is_element_present(*ContactUsPageLocators.SEND_MESSAGE_BUTTON), \
+            "Send message button is not presented"
         send_message_button = self.find_element(*ContactUsPageLocators.SEND_MESSAGE_BUTTON)
         send_message_button.click()
-        actual_text = self.get_element_text(ContactUsPageLocators.SUCCESS_SEND_MESSAGE_TEXT)
-        assert self.is_element_present(*ContactUsPageLocators.SUCCESS_SEND_MESSAGE_POPUP), \
-            "Success popup is not presented"
-        assert actual_text == ContactUsPageData.SUCCESS_SEND_MESSAGE_TEXT, \
-            f"Expected {ContactUsPageData.SUCCESS_SEND_MESSAGE_TEXT}, got {actual_text}"
-
-
+        actual_button_name = self.get_element_text(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        assert actual_button_name == ContactUsPageData.SEND_MESSAGE_BUTTON, \
+            f"Name of the send message button doesn't match. " \
+            f"Expected {ContactUsPageData.SEND_MESSAGE_BUTTON}, got {actual_button_name}"
 

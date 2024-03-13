@@ -32,7 +32,6 @@ class TestHome(BaseTest):
         page = HomePage(self.driver)
         page.is_make_an_order_button_presented()
 
-    @pytest.mark.smoke
     def test_guest_can_see_boost_your_profile_section(self):
         page = HomePage(self.driver)
         page.is_boost_your_profile_container_presented()
