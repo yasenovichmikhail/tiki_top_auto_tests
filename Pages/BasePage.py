@@ -34,6 +34,10 @@ class BasePage:
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).text
         return element
 
+    def clear_data(self, field, len_value):
+        for i in range(len_value):
+            field.send_keys("\b")
+
     def find_element(self, locator):
         return self.driver.find_element(*locator)
 
