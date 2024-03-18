@@ -26,10 +26,6 @@ class BasePage:
     def send_keys(self, locator, text):
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).send_keys(text)
 
-    # def clear(self, locator):
-    #     element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-    #     return element.clear()
-
     def get_element_text(self, locator):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).text
         return element
@@ -50,7 +46,7 @@ class BasePage:
 
     def is_not_element_present(self, locator, timeout=4):
         try:
-            WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(*locator))
+            WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator))
         except TimeoutException:
             return True
         return False

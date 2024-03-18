@@ -34,6 +34,21 @@ class ContactUsPage(BasePage):
             f"Header of the contact us description doesn't match. " \
             f"Expected {ContactUsPageData.GET_IN_TOUCH_DESCRIPTION}, got {actual_description}"
 
+    def is_first_name_text_field_presented(self):
+        actual_header = self.get_element_text(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD_HEADER)
+        assert self.is_element_present(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD), \
+            "First name text field is not presented"
+        assert actual_header == ContactUsPageData.FIRST_NAME_TEXT_FIELD_HEADER,\
+            f"Header of the first name text field doesn't match. " \
+            f" Expected {ContactUsPageData.FIRST_NAME_TEXT_FIELD_HEADER}, got {actual_header}"
+
+    def is_first_name_text_field_placeholder_presented(self):
+        text_field = self.find_element(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
+        actual_placeholder = text_field.get_attribute('placeholder')
+        assert actual_placeholder == ContactUsPageData.FIRST_NAME_FIELD_PLACEHOLDER, \
+            f"Placeholder of the first name text field doesn't match. " \
+            f"Expected {ContactUsPageData.FIRST_NAME_FIELD_PLACEHOLDER}, got {actual_placeholder}"
+
     def is_email_address_text_field_presented(self):
         actual_header = self.get_element_text(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD_HEADER)
         assert self.is_element_present(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD),\
@@ -100,15 +115,19 @@ class ContactUsPage(BasePage):
             f"Warning of the empty message field doesn't match. " \
             f"Expected {ContactUsPageData.MESSAGE_FIELD_REQUIRED_WARNING}, got {actual_warning}"
 
-    def is_max_length_warning_first_name_field_presented(self, value):
-        self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, value)
+    def is_max_length_warning_first_name_field_presented(self):
         self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
-        actual_warning = self.get_element_text(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING)
         assert self.is_element_present(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING), \
             "Warning is not presented"
+        actual_warning = self.get_element_text(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING)
         assert actual_warning == ContactUsPageData.MAX_LENGTH_FIRST_NAME_FIELD_WARNING, \
             f"Warning doesn't match. Expected {ContactUsPageData.MAX_LENGTH_FIRST_NAME_FIELD_WARNING}," \
             f" got {actual_warning}"
+
+    def is_max_length_warning_first_name_field_not_presented(self):
+        self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        assert self.is_not_element_present(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING, timeout=4), \
+            "Warning is presented"
 
     def enter_first_name_field(self, value):
         assert self.is_element_present(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD), \
@@ -117,31 +136,10 @@ class ContactUsPage(BasePage):
         assert actual_header == ContactUsPageData.FIRST_NAME_TEXT_FIELD_HEADER, \
             f"Header of the first name text field doesn't match. " \
             f"Expected {ContactUsPageData.FIRST_NAME_TEXT_FIELD_HEADER}, got {actual_header}"
-        text_field = self.find_element(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
-        actual_placeholder = text_field.get_attribute('placeholder')
-        assert actual_placeholder == ContactUsPageData.FIRST_NAME_FIELD_PLACEHOLDER, \
-            f"Placeholder of the first name text field doesn't match. " \
-            f"Expected {ContactUsPageData.FIRST_NAME_FIELD_PLACEHOLDER}, got {actual_placeholder}"
         self.send_keys(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD, value)
         first_name_field = self.find_element(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
         actual_value = first_name_field.get_attribute('value')
         assert len(actual_value) > 0, "Data is not entered"
-
-        # def is_first_name_text_field_presented(self):
-        #     actual_header = self.get_element_text(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD_HEADER)
-        #     assert self.is_element_present(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD), \
-        #         "First name text field is not presented"
-        #     assert actual_header == ContactUsPageData.FIRST_NAME_TEXT_FIELD_HEADER,\
-        #         f"Header of the first name text field doesn't match. " \
-        #         f" Expected {ContactUsPageData.FIRST_NAME_TEXT_FIELD_HEADER}, got {actual_header}"
-
-        # def is_first_name_text_field_placeholder_presented(self):
-        #     text_field = self.find_element(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD)
-        #     actual_placeholder = text_field.get_attribute('placeholder')
-        #     assert actual_placeholder == ContactUsPageData.FIRST_NAME_FIELD_PLACEHOLDER, \
-        #         f"Placeholder of the first name text field doesn't match. " \
-        #         f"Expected {ContactUsPageData.FIRST_NAME_FIELD_PLACEHOLDER}, got {actual_placeholder}"
-
 
     def enter_email_address_field(self, value):
         self.send_keys(ContactUsPageLocators.EMAIL_ADDRESS_TEXT_FIELD, value)

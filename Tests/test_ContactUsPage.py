@@ -128,51 +128,19 @@ class TestContactUsGeneral(BaseTest):
     def test_guest_can_go_to_privacy_policy_page(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.go_to_privacy_policy_from_footer_link()
-
-
-class TestContactUsEmailAddressField(BaseTest):
-
-    def test_guest_cant_send_message_without_filling_email_address_field(self):
-        page = ContactUsPage(self.driver)
-        page.go_to_contact_us_page_from_header_link()
-        page.is_email_address_field_required()
-
-    def test_guest_can_enter_data(self):
-        page = ContactUsPage(self.driver)
-        page.go_to_contact_us_page_from_header_link()
-        page.enter_email_address_field(TestData.generate_valid_email_address())
-
-    @pytest.mark.smoke
-    def test_guest_can_clear_data(self):
-        page = ContactUsPage(self.driver)
-        page.go_to_contact_us_page_from_header_link()
-        page.enter_email_address_field(TestData.generate_valid_email_address())
-        page.clear_email_address_field()
-
-    def test_guest_can_edit_entered_data(self):
-        page = ContactUsPage(self.driver)
-        page.go_to_contact_us_page_from_header_link()
-        page.enter_email_address_field(TestData.generate_valid_email_address())
-        page.clear_email_address_field()
-        page.enter_email_address_field(TestData.generate_valid_email_address())
-
+        page.go_to_privacy_policy_from_
 
 class TestContactUsFirstNameField(BaseTest):
-    def test_guest_can_send_message_without_filling_first_name(self):
-        page = ContactUsPage(self.driver)
-        page.go_to_contact_us_page_from_header_link()
-        page.enter_email_address_field(TestData.generate_valid_email_address())
-        page.enter_message_field(TestData.generate_sentences(10))
-        page.click_send_message_button()
 
-    def test_guest_can_send_message_all_field_filled(self):
+    def test_guest_can_see_first_name_field(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
-        page.enter_first_name_field(TestData.generate_first_name())
-        page.enter_email_address_field(TestData.generate_valid_email_address())
-        page.enter_message_field(TestData.generate_sentences(10))
-        page.click_send_message_button()
+        page.is_first_name_text_field_presented()
+
+    def test_guest_can_see_first_name_field_placeholder(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_first_name_text_field_placeholder_presented()
 
     def test_guest_can_enter_lowercase_letter(self):
         page = ContactUsPage(self.driver)
@@ -198,14 +166,62 @@ class TestContactUsFirstNameField(BaseTest):
         page.enter_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
                                                                         TestData.PUNCTUATION))
 
+    @pytest.mark.smoke
     def test_guest_cant_enter_more_than_max_characters_first_name_field(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD + 1,
+                                                                        TestData.ALL_LETTERS))
+        page.is_max_length_warning_first_name_field_presented()
+
+    def test_guest_can_enter_max_characters_first_name_field(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.enter_first_name_field(TestData.generate_random_characters(TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
                                                                         TestData.ALL_LETTERS))
-        page.is_max_length_warning_first_name_field_presented(TestData.generate_random_characters
-                                                              (TestData.MAX_CHARACTER_FIRST_NAME_FIELD,
-                                                               TestData.ALL_LETTERS))
+        page.is_max_length_warning_first_name_field_not_presented()
+
+    def test_guest_can_send_message_without_filling_first_name(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_email_address_field(TestData.generate_valid_email_address())
+        page.enter_message_field(TestData.generate_sentences(10))
+        page.click_send_message_button()
+
+    def test_guest_can_send_message_all_field_filled(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_first_name_field(TestData.generate_first_name())
+        page.enter_email_address_field(TestData.generate_valid_email_address())
+        page.enter_message_field(TestData.generate_sentences(10))
+        page.click_send_message_button()
+
+
+class TestContactUsEmailAddressField(BaseTest):
+
+    def test_guest_cant_send_message_without_filling_email_address_field(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_email_address_field_required()
+
+    def test_guest_can_enter_data(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_email_address_field(TestData.generate_valid_email_address())
+
+    def test_guest_can_clear_data(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_email_address_field(TestData.generate_valid_email_address())
+        page.clear_email_address_field()
+
+    def test_guest_can_edit_entered_data(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.enter_email_address_field(TestData.generate_valid_email_address())
+        page.clear_email_address_field()
+        page.enter_email_address_field(TestData.generate_valid_email_address())
+
 
 
 
