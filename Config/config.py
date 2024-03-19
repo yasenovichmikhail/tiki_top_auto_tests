@@ -13,6 +13,7 @@ class TestData:
 
     CHANGE_PASSWORD_PAGE_TITLE = "Change Password | TikiTop"
     MAX_CHARACTER_FIRST_NAME_FIELD = 15
+    MIN_CHARACTER_MESSAGE_FIELD = 20
     ALL_LETTERS = s.ascii_letters
     UPPERCASE_LETTERS = s.ascii_uppercase
     LOWERCASE_LETTERS = s.ascii_lowercase
@@ -206,6 +207,7 @@ class ContactUsPageData:
     EMAIL_ADDRESS_FIELD_REQUIRED_WARNING = "Required"
     MESSAGE_FIELD_REQUIRED_WARNING = "Required"
     MAX_LENGTH_FIRST_NAME_FIELD_WARNING = "Must be 15 characters or less"
+    MIN_LENGTH_MESSAGE_FIELD_WARNING = "Must be 20 or more characters"
     SUCCESS_SEND_MESSAGE_TEXT = "Your message has been sended"
 
 

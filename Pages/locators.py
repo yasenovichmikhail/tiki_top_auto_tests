@@ -114,6 +114,7 @@ class ContactUsPageLocators:
     SUCCESS_SEND_MESSAGE_TEXT = (By.XPATH, "//h4 [@class='ModalSuccess_title__EMOMJ']")
     MAX_LENGTH_FIRST_NAME_FIELD_WARNING = (By.XPATH, "//div[@class='InputContact_container__czJ87'][1]"
                                                      "//p[@class='ErrorMessage_error__oBSER']")
+    MIN_LENGTH_MESSAGE_FIELD_WARNING = (By.XPATH, "//div/main/section/div/form/div/div[3]/p")
 
 
 class LoginPageLocators:

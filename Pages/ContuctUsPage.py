@@ -126,8 +126,11 @@ class ContactUsPage(BasePage):
 
     def is_max_length_warning_first_name_field_not_presented(self):
         self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
-        assert self.is_not_element_present(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING, timeout=4), \
+        assert self.is_not_element_present(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING), \
             "Warning is presented"
+
+    # TO DO: def is_min_length_warning_message_field_presented(self):
+    #     sel
 
     def enter_first_name_field(self, value):
         assert self.is_element_present(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD), \
