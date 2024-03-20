@@ -129,8 +129,19 @@ class ContactUsPage(BasePage):
         assert self.is_not_element_present(ContactUsPageLocators.MAX_LENGTH_FIRST_NAME_FIELD_WARNING), \
             "Warning is presented"
 
-    # TO DO: def is_min_length_warning_message_field_presented(self):
-    #     sel
+    def is_min_length_warning_message_field_presented(self):
+        self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        assert self.is_element_present(ContactUsPageLocators.MIN_LENGTH_MESSAGE_FIELD_WARNING), \
+            "Warning is not presented"
+        actual_warning = self.get_element_text(ContactUsPageLocators.MIN_LENGTH_MESSAGE_FIELD_WARNING)
+        assert actual_warning == ContactUsPageData.MIN_LENGTH_MESSAGE_FIELD_WARNING, \
+            f"Warning doesn't match. Expected {ContactUsPageData.MIN_LENGTH_MESSAGE_FIELD_WARNING}, " \
+            f"got {actual_warning}"
+
+    def is_min_length_warning_message_field_not_presented(self):
+        self.click(ContactUsPageLocators.SEND_MESSAGE_BUTTON)
+        assert self.is_not_element_present(ContactUsPageLocators.MIN_LENGTH_MESSAGE_FIELD_WARNING), \
+            "Warning is presented"
 
     def enter_first_name_field(self, value):
         assert self.is_element_present(ContactUsPageLocators.FIRST_NAME_TEXT_FIELD), \
