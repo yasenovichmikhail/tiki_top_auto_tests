@@ -272,6 +272,13 @@ class TestMessageField(BaseTest):
         page.go_to_contact_us_page_from_header_link()
         page.enter_message_field(TestData.generate_random_characters(100, TestData.PUNCTUATION))
 
+    # @pytest.mark.smoke
+    # def test_guest_can_enter_space(self):
+    #     page = ContactUsPage(self.driver)
+    #     page.go_to_contact_us_page_from_header_link()
+    #     page.enter_message_field(TestData.generate_random_characters(50, TestData.WHITE_SPACE))
+    #     time.sleep(5)
+
     def test_guest_can_edit_entered_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
@@ -281,17 +288,16 @@ class TestMessageField(BaseTest):
         page.enter_message_field(TestData.generate_random_characters(100, TestData.LOWERCASE_LETTERS))
         time.sleep(3)
 
-    @pytest.mark.smoke
-    def test_guest_cant_send_message_without_filling_message_field(self):
-        page = ContactUsPage(self.driver)
-        page.go_to_contact_us_page_from_header_link()
-        page.is_message_field_required()
-
     def test_guest_can_clear_data(self):
         page = ContactUsPage(self.driver)
         page.go_to_contact_us_page_from_header_link()
         page.enter_message_field(TestData.generate_random_characters(100, TestData.LOWERCASE_LETTERS))
         page.clear_message_field()
+
+    def test_guest_cant_send_message_without_filling_message_field(self):
+        page = ContactUsPage(self.driver)
+        page.go_to_contact_us_page_from_header_link()
+        page.is_message_field_required()
 
 
 

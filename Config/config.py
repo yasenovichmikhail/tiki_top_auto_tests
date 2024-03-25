@@ -17,6 +17,7 @@ class TestData:
     ALL_LETTERS = s.ascii_letters
     UPPERCASE_LETTERS = s.ascii_uppercase
     LOWERCASE_LETTERS = s.ascii_lowercase
+    WHITE_SPACE = s.whitespace
     DIGITS = s.digits
     PUNCTUATION = s.punctuation
 
