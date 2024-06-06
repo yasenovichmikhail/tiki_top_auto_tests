@@ -145,7 +145,7 @@ class BasePage:
         assert actual_link_name == expected_link_name, f"Name of the header Learn link doesn't match. " \
                                                        f"Expected {expected_link_name}, got {actual_link_name}"
         self.click(BasePageLocators.LEARN_LINK_HEADER)
-        assert self.is_element_present(*BasePageLocators.LEARN_CONTAINER), "Learn container is not presented"
+        assert self.is_element_present(BasePageLocators.LEARN_CONTAINER), "Learn container is not presented"
 
     def go_to_learn_page_from_footer_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.LEARN_LINK_HEADER)
@@ -153,7 +153,7 @@ class BasePage:
         assert actual_link_name == expected_link_name, f"Name of the footer Learn link doesn't match. " \
                                                        f"Expected {expected_link_name}, got {actual_link_name}"
         self.click(BasePageLocators.LEARN_LINK_FOOTER)
-        assert self.is_element_present(*BasePageLocators.LEARN_CONTAINER), "Learn container is not presented"
+        assert self.is_element_present(BasePageLocators.LEARN_CONTAINER), "Learn container is not presented"
 
     def go_to_home_page_from_footer_link(self):
         actual_link_name = self.get_element_text(BasePageLocators.HOME_LINK_FOOTER)
@@ -193,7 +193,7 @@ class BasePage:
         assert actual_link_name == expected_link_name, f"Name of the Privacy Policy link doesn't match. " \
                                                        f"Expected {expected_link_name}, got {actual_link_name}"
         self.click(BasePageLocators.PRIVACY_POLICY_LINK)
-        assert self.is_element_present(*BasePageLocators.PRIVACY_POLICY_CONTAINER), "Privacy Policy is not opened"
+        assert self.is_element_present(BasePageLocators.PRIVACY_POLICY_CONTAINER), "Privacy Policy is not opened"
 
 
 

@@ -20,7 +20,7 @@ class FaqPage(BasePage):
         assert title == FaqPageData.FAQ_PAGE_TITLE, "Title of the FAQ page doesn't match"
 
     def is_popular_questions_container_presented(self):
-        self.is_element_present(*FaqPageLocators.POPULAR_QUESTIONS_CONTAINER)
+        self.is_element_present(FaqPageLocators.POPULAR_QUESTIONS_CONTAINER)
         actual_header = self.get_element_text(FaqPageLocators.POPULAR_QUESTIONS_HEADER)
 
         assert actual_header == FaqPageData.POPULAR_QUESTIONS_HEADER, \
