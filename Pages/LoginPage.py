@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 from Config.config import TestData
 from Pages.BasePage import BasePage
-from Pages.locators import BasePageLocators, LoginPageLocators
+from Pages.locators import BasePageLocators, LoginPageLocators, ForgotPasswordPageLocators
 
 
 class LoginPage(BasePage):
@@ -44,6 +44,9 @@ class LoginPage(BasePage):
 
     def click_forgot_password_button(self):
         self.click(LoginPageLocators.FORGOT_PASSWORD_BUTTON)
+        actual_header = self.get_element_text(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
+        expected_header = "ENTER YOUR EMAIL"
+        assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
 
     def show_password(self):
         self.click(LoginPageLocators.SHOW_PASSWORD_ICON)

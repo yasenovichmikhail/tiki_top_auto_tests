@@ -24,3 +24,8 @@ class TestLogin(BaseTest):
         page.open_login_form()
         page.click_close_login_page()
 
+    def test_user_can_open_forgot_password_form(self):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_forgot_password_button()
+
