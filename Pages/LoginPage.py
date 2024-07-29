@@ -19,6 +19,10 @@ class LoginPage(BasePage):
 
     def open_login_form(self):
         self.click(BasePageLocators.SIGNUP_BUTTON)
+        actual_login_tab_text = self.get_element_text(LoginPageLocators.LOGIN_TAB)
+        expected_login_tab_text = "Log in"
+        assert actual_login_tab_text == expected_login_tab_text, f"Expected {expected_login_tab_text}, " \
+                                                                 f"got {actual_login_tab_text}"
 
     def click_sign_up_tab(self):
         self.click(LoginPageLocators.SIGNUP_TAB)
@@ -55,6 +59,7 @@ class LoginPage(BasePage):
 
     def click_close_login_page(self):
         self.click(LoginPageLocators.CLOSE_LOGIN_PAGE_BUTTON)
+        self.is_not_element_present(LoginPageLocators.LOGIN_TAB, 4)
 
     def login(self):
         page = LoginPage(self.driver)

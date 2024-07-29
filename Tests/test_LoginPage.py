@@ -15,4 +15,12 @@ class TestLogin(BaseTest):
         page.set_password(TestData.PASSWORD)
         page.click_login_button()
 
+    def test_user_can_open_login_form(self):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+
+    def test_user_can_close_logit_form(self):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_close_login_page()
 
