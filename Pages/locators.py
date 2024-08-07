@@ -4,6 +4,8 @@ from selenium.webdriver.common.by import By
 class BasePageLocators:
     SIGNUP_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
                                " CustomButton_colorWhite__MeJq0 CustomButton_btnSignUp__1ijqK']")
+    PROFILE_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorWhite__MeJq0 CustomButton"
+                                "_btnSignUp__1ijqK ButtonHeaderProfile_button__756EG']")
     HEADER_LOGO = (By.XPATH, "//a[@class='HeaderLogo_link__w6i5r']")
     HEADER = (By.XPATH, "//div[@class='HeaderTopWrapper_topWrapper__wcGqJ']")
     FOOTER = (By.XPATH, "//nav[@class='FooterNav_container__TNimz']")

@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 from Config.config import TestData
 from Pages.BasePage import BasePage
-from Pages.locators import BasePageLocators, LoginPageLocators, ForgotPasswordPageLocators
+from Pages.locators import BasePageLocators, LoginPageLocators, ForgotPasswordPageLocators, HomePageLocators
 
 
 class LoginPage(BasePage):

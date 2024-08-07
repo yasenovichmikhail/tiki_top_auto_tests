@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from Config.config import TestData
@@ -7,12 +9,20 @@ from Tests.test_base import BaseTest
 
 class TestLogin(BaseTest):
 
-    def test_login(self):
+    def test_create_account_with_email(self, email='user1@mail.ru', password=TestData.PASSWORD):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_sign_up_tab()
+        page.set_email(email=email)
+        page.set_password(password=password)
+        page.click_create_my_account_button()
+
+    def test_login(self, email='user@mail.ru', password=TestData.PASSWORD):
         page = LoginPage(self.driver)
         page.open_login_form()
         page.click_login_tab()
-        page.set_email(TestData.USER_EMAIL)
-        page.set_password(TestData.PASSWORD)
+        page.set_email(email=email)
+        page.set_password(password=password)
         page.click_login_button()
 
     def test_user_can_open_login_form(self):
