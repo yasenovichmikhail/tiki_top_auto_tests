@@ -39,6 +39,12 @@ class LoginPage(BasePage):
     def set_email(self, email):
         self.send_keys(LoginPageLocators.INPUT_EMAIL, email)
 
+    def is_email_is_required_field(self):
+        # self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
+        actual_warning = self.get_element_text(LoginPageLocators.REQUIRED_FIELD_WARNING)
+        expected_warning = 'Required'
+        assert actual_warning == expected_warning, f"Expected {expected_warning}, got {actual_warning}"
+
     def set_password(self, password):
         self.send_keys(LoginPageLocators.INPUT_PASSWORD, password)
 
