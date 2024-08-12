@@ -48,17 +48,17 @@ class LoginPage(BasePage):
     def set_password(self, password):
         self.send_keys(LoginPageLocators.INPUT_PASSWORD, password)
 
-    def click_forgot_password_button(self):
-        self.click(LoginPageLocators.FORGOT_PASSWORD_BUTTON)
-        actual_header = self.get_element_text(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
-        expected_header = "ENTER YOUR EMAIL"
-        assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
-
     def show_password(self):
         self.click(LoginPageLocators.SHOW_PASSWORD_ICON)
 
     def hide_password(self):
         self.click(LoginPageLocators.HIDE_PASSWORD_ICON)
+
+    def click_forgot_password_button(self):
+        self.click(LoginPageLocators.FORGOT_PASSWORD_BUTTON)
+        actual_header = self.get_element_text(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
+        expected_header = "ENTER YOUR EMAIL"
+        assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
 
     def click_create_my_account_button(self):
         self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
@@ -68,6 +68,12 @@ class LoginPage(BasePage):
 
     def click_login_button(self):
         self.click(LoginPageLocators.LOGIN_BUTTON)
+
+    def click_privacy_policy(self):
+        self.click(LoginPageLocators.PRIVACY_POLICY)
+        actual_header = self.get_element_text(BasePageLocators.PRIVACY_POLICY_HEADER)
+        expected_header = "PRIVACY POLICY"
+        assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
 
     def click_close_login_page(self):
         self.click(LoginPageLocators.CLOSE_LOGIN_PAGE_BUTTON)

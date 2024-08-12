@@ -188,11 +188,11 @@ class BasePage:
         assert title == ContactUsPageData.CONTACT_US_PAGE_TITLE, "Title of the Contact Us page doesn't match"
 
     def go_to_privacy_policy_from_footer_link(self):
-        actual_link_name = self.get_element_text(BasePageLocators.PRIVACY_POLICY_LINK)
+        actual_link_name = self.get_element_text(BasePageLocators.PRIVACY_POLICY_FOOTER_LINK)
         expected_link_name = "Privacy Policy"
         assert actual_link_name == expected_link_name, f"Name of the Privacy Policy link doesn't match. " \
                                                        f"Expected {expected_link_name}, got {actual_link_name}"
-        self.click(BasePageLocators.PRIVACY_POLICY_LINK)
+        self.click(BasePageLocators.PRIVACY_POLICY_FOOTER_LINK)
         assert self.is_element_present(BasePageLocators.PRIVACY_POLICY_CONTAINER), "Privacy Policy is not opened"
 
 

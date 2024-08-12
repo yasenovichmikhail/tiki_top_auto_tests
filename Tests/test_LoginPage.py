@@ -37,6 +37,16 @@ class TestLogin(BaseTest):
         page.is_required_field()
         time.sleep(5)
 
+    def test_guest_cant_register_without_filling_password_and_email(self, email='', password=''):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_sign_up_tab()
+        page.set_email(email=email)
+        page.set_password(password=password)
+        page.click_create_account_disabled_button()
+        page.is_required_field()
+        time.sleep(5)
+
     def test_login(self, email='user@mail.ru', password=TestData.PASSWORD):
         page = LoginPage(self.driver)
         page.open_login_form()
@@ -58,4 +68,10 @@ class TestLogin(BaseTest):
         page = LoginPage(self.driver)
         page.open_login_form()
         page.click_forgot_password_button()
+
+    def test_guest_can_open_privacy_policy(self):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_sign_up_tab()
+        page.click_privacy_policy()
 

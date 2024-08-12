@@ -20,7 +20,7 @@ class BasePageLocators:
     FAQ_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[3]")
     CONTACT_US_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[4]")
     LEARN_LINK_FOOTER = (By.XPATH, "//div//footer//ul//li[5]")
-    PRIVACY_POLICY_LINK = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U"
+    PRIVACY_POLICY_FOOTER_LINK = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U"
                                      " ButtonTermsPrivacy_linkFooter__BtSNv'][1]")
     TERMS_CONDITIONS_LINK = (By.XPATH, "//button[@class='ButtonTermsPrivacy_btn__12u2U"
                                        " ButtonTermsPrivacy_linkFooter__BtSNv'][2]")
@@ -141,6 +141,8 @@ class LoginPageLocators:
     REQUIRED_FIELD_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
     CREATE_ACCOUNT_DISABLED_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 "
                                                 "CustomButton_typeAuth__m__ns']")
+    PRIVACY_POLICY = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[1]")
+    TERMS_OF_USE = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[2]")
 
 
 class ForgotPasswordPageLocators:
