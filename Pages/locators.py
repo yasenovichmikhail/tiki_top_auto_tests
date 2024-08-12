@@ -28,7 +28,6 @@ class BasePageLocators:
     TELEGRAM_LINK = (By.XPATH, "//a[@class='ButtonTermsPrivacy_linkFooter__BtSNv'][2]")
     PRIVACY_POLICY_CONTAINER = (By.XPATH, "//div[@class='ModalBase_container__aKAn0 "
                                           "ModalBase_secondTerms_Policy__bi4Ks']")
-    PRIVACY_POLICY_HEADER = (By.XPATH, "//article[@class='LayoutTermPrivacy_containerText__g__ZW']//h4")
     LEARN_CONTAINER = (By.XPATH, "//div[@class='ModalBase_container__aKAn0 "
                                  "ModalBase_colorBlack__FDws8 ModalBase_secondLearn__F77CZ']")
 
@@ -141,8 +140,10 @@ class LoginPageLocators:
     REQUIRED_FIELD_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
     CREATE_ACCOUNT_DISABLED_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 "
                                                 "CustomButton_typeAuth__m__ns']")
-    PRIVACY_POLICY = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[1]")
-    TERMS_OF_USE = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[2]")
+    PRIVACY_POLICY_LINK = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[1]")
+    TERMS_OF_USE_LINK = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[2]")
+    PRIVACY_POLICY_HEADER = (By.XPATH, "//article[@class='LayoutTermPrivacy_containerText__g__ZW']//h4")
+    TERMS_OF_USE_HEADER = (By.XPATH, "//article[@class='LayoutTermPrivacy_containerText__g__ZW']/h4")
 
 
 class ForgotPasswordPageLocators:

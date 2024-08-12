@@ -73,5 +73,11 @@ class TestLogin(BaseTest):
         page = LoginPage(self.driver)
         page.open_login_form()
         page.click_sign_up_tab()
-        page.click_privacy_policy()
+        page.click_privacy_policy_link()
+
+    def test_guest_can_open_terms_of_use(self):
+        page = LoginPage(self.driver)
+        page.open_login_form()
+        page.click_sign_up_tab()
+        page.click_terms_of_use_link()
 

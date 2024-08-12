@@ -69,10 +69,16 @@ class LoginPage(BasePage):
     def click_login_button(self):
         self.click(LoginPageLocators.LOGIN_BUTTON)
 
-    def click_privacy_policy(self):
-        self.click(LoginPageLocators.PRIVACY_POLICY)
-        actual_header = self.get_element_text(BasePageLocators.PRIVACY_POLICY_HEADER)
+    def click_privacy_policy_link(self):
+        self.click(LoginPageLocators.PRIVACY_POLICY_LINK)
+        actual_header = self.get_element_text(LoginPageLocators.PRIVACY_POLICY_HEADER)
         expected_header = "PRIVACY POLICY"
+        assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
+
+    def click_terms_of_use_link(self):
+        self.click(LoginPageLocators.TERMS_OF_USE_LINK)
+        actual_header = self.get_element_text(LoginPageLocators.TERMS_OF_USE_HEADER)
+        expected_header = "TERMS & CONDITIONS"
         assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
 
     def click_close_login_page(self):
