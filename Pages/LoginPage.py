@@ -39,7 +39,7 @@ class LoginPage(BasePage):
     def set_email(self, email):
         self.send_keys(LoginPageLocators.INPUT_EMAIL, email)
 
-    def is_email_is_required_field(self):
+    def is_required_field(self):
         # self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
         actual_warning = self.get_element_text(LoginPageLocators.REQUIRED_FIELD_WARNING)
         expected_warning = 'Required'
@@ -62,6 +62,9 @@ class LoginPage(BasePage):
 
     def click_create_my_account_button(self):
         self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
+
+    def click_create_account_disabled_button(self):
+        self.click(LoginPageLocators.CREATE_ACCOUNT_DISABLED_BUTTON)
 
     def click_login_button(self):
         self.click(LoginPageLocators.LOGIN_BUTTON)

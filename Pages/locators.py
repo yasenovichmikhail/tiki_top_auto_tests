@@ -139,6 +139,8 @@ class LoginPageLocators:
                               " CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")
     CLOSE_LOGIN_PAGE_BUTTON = (By.XPATH, "//button[@class='ButtonClose_btn__rSXPy ButtonClose_btnDefault__3PgA1']")
     REQUIRED_FIELD_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
+    CREATE_ACCOUNT_DISABLED_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 "
+                                                "CustomButton_typeAuth__m__ns']")
 
 
 class ForgotPasswordPageLocators:
