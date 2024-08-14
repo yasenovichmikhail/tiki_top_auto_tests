@@ -17,5 +17,5 @@ class ForgotPasswordPage(BasePage):
         self.click(ForgotPasswordPageLocators.SUBMIT_BUTTON)
 
     def click_close_button(self):
-        self.click(ForgotPasswordPageLocators.CLOSE_FORGOT_PASSWORD_BUTTON)
+        self.click(ForgotPasswordPageLocators.CLOSE_FORGOT_PASSWORD_ICON)
 

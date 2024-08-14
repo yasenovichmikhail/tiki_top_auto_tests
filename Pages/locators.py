@@ -137,7 +137,8 @@ class LoginPageLocators:
     LOGIN_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s"
                               " CustomButton_colorAqua__TKZR6 CustomButton_typeAuth__m__ns']")
     CLOSE_LOGIN_PAGE_BUTTON = (By.XPATH, "//button[@class='ButtonClose_btn__rSXPy ButtonClose_btnDefault__3PgA1']")
-    REQUIRED_FIELD_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
+    REQUIRED_FIELD_WARNING = (By.XPATH, "//span[contains(text(), 'Required')]")
+    USER_IS_NOT_FOUND_WARNING = (By.XPATH, "//span[contains(text(), 'User with such email not found')]")
     CREATE_ACCOUNT_DISABLED_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorRed__g7yY3 "
                                                 "CustomButton_typeAuth__m__ns']")
     PRIVACY_POLICY_LINK = (By.XPATH, "//p[@class='AuthorizationDiscription_labelDiscription__EN1Eb']/span[1]")
@@ -154,7 +155,7 @@ class ForgotPasswordPageLocators:
     NOT_REGISTERED_EMAIL_WARNING = (By.XPATH, "//span[@class='ModalBase_errors__rYDQx']")
     SUBMIT_BUTTON = (By.XPATH, "//button[@class='CustomButton_btn__22u2s CustomButton_colorBlack__4euz_ "
                                "CustomButton_btnForgot__rBSRC']")
-    CLOSE_FORGOT_PASSWORD_BUTTON = (By.XPATH, "//*[@id='__next']/div/header/div[3]/div/div[5]/div/button")
+    CLOSE_FORGOT_PASSWORD_ICON = (By.XPATH, "//*[@id='__next']/div/header/div[3]/div/div[5]/div/button")
     SUCCESS_FORM_HEADER = (By.XPATH, "//h3[@class='ModalDescriptionMessage_title__6hSBQ']")
     SUCCESS_FORM_DESCRIPTION_1 = (By.XPATH, "//p[@class='ModalDescriptionMessage_discription__FcfFh']")
     SUCCESS_FORM_DESCRIPTION_2 = (By.XPATH, "//p[@class='ModalDescriptionMessage_spam__k8MM0']")

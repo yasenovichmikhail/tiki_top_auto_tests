@@ -26,9 +26,15 @@ class LoginPage(BasePage):
 
     def click_sign_up_tab(self):
         self.click(LoginPageLocators.SIGNUP_TAB)
+        actual_btn_name = self.get_element_text(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
+        expected_btn_name = "Create my account"
+        assert actual_btn_name == expected_btn_name, f"Expected {expected_btn_name}, got {actual_btn_name}"
 
     def click_login_tab(self):
         self.click(LoginPageLocators.LOGIN_TAB)
+        actual_btn_name = self.get_element_text(LoginPageLocators.LOGIN_BUTTON)
+        expected_btn_name = "Login"
+        assert actual_btn_name == expected_btn_name, f"Expected {expected_btn_name}, got {actual_btn_name}"
 
     def click_google_auth_button(self):
         self.click(LoginPageLocators.GOOGLE_AUTH_BUTTON)
@@ -40,9 +46,13 @@ class LoginPage(BasePage):
         self.send_keys(LoginPageLocators.INPUT_EMAIL, email)
 
     def is_required_field(self):
-        # self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
         actual_warning = self.get_element_text(LoginPageLocators.REQUIRED_FIELD_WARNING)
         expected_warning = 'Required'
+        assert actual_warning == expected_warning, f"Expected {expected_warning}, got {actual_warning}"
+
+    def is_user_not_found(self):
+        actual_warning = self.get_element_text(LoginPageLocators.USER_IS_NOT_FOUND_WARNING)
+        expected_warning = "User with such email not found"
         assert actual_warning == expected_warning, f"Expected {expected_warning}, got {actual_warning}"
 
     def set_password(self, password):
@@ -59,6 +69,10 @@ class LoginPage(BasePage):
         actual_header = self.get_element_text(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
         expected_header = "ENTER YOUR EMAIL"
         assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
+
+    def close_forgot_password_form(self):
+        self.click(ForgotPasswordPageLocators.CLOSE_FORGOT_PASSWORD_ICON)
+        # TO DO assert self.is_not_element_present(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
 
     def click_create_my_account_button(self):
         self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
