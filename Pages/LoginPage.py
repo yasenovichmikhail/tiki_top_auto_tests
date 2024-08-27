@@ -1,9 +1,11 @@
+import time
+
 import pytest
 from selenium.webdriver.common.by import By
 
 from Config.config import TestData
 from Pages.BasePage import BasePage
-from Pages.locators import BasePageLocators, LoginPageLocators, ForgotPasswordPageLocators, HomePageLocators
+from Pages.locators import BasePageLocators, LoginPageLocators, ForgotPasswordPageLocators
 
 
 class LoginPage(BasePage):
@@ -28,13 +30,15 @@ class LoginPage(BasePage):
         self.click(LoginPageLocators.SIGNUP_TAB)
         actual_btn_name = self.get_element_text(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
         expected_btn_name = "Create my account"
-        assert actual_btn_name == expected_btn_name, f"Expected {expected_btn_name}, got {actual_btn_name}"
+        assert actual_btn_name == expected_btn_name, f"Expected {expected_btn_name}, " \
+                                                     f"got {actual_btn_name}"
 
     def click_login_tab(self):
         self.click(LoginPageLocators.LOGIN_TAB)
         actual_btn_name = self.get_element_text(LoginPageLocators.LOGIN_BUTTON)
         expected_btn_name = "Login"
-        assert actual_btn_name == expected_btn_name, f"Expected {expected_btn_name}, got {actual_btn_name}"
+        assert actual_btn_name == expected_btn_name, f"Expected {expected_btn_name}, " \
+                                                     f"got {actual_btn_name}"
 
     def click_google_auth_button(self):
         self.click(LoginPageLocators.GOOGLE_AUTH_BUTTON)
@@ -68,11 +72,14 @@ class LoginPage(BasePage):
         self.click(LoginPageLocators.FORGOT_PASSWORD_BUTTON)
         actual_header = self.get_element_text(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
         expected_header = "ENTER YOUR EMAIL"
+        print(self.is_element_present(LoginPageLocators.INPUT_PASSWORD))
+        time.sleep(3)
+
         assert actual_header == expected_header, f"Expected {expected_header}, got {actual_header}"
 
     def close_forgot_password_form(self):
         self.click(ForgotPasswordPageLocators.CLOSE_FORGOT_PASSWORD_ICON)
-        # TO DO assert self.is_not_element_present(ForgotPasswordPageLocators.FORGOT_PASSWORD_FORM_HEADER)
+        # print(self.is_element_present(ForgotPasswordPageLocators.YOUR_EMAIL_FIELD))
 
     def click_create_my_account_button(self):
         self.click(LoginPageLocators.CREATE_MY_ACCOUNT_BUTTON)
@@ -106,3 +113,6 @@ class LoginPage(BasePage):
         page.set_email(TestData.USER_EMAIL)
         page.set_password(TestData.PASSWORD)
         page.click_login_button()
+
+    def is_present(self):
+        print(self.is_not_element_present(ForgotPasswordPageLocators.YOUR_EMAIL_FIELD, 10))

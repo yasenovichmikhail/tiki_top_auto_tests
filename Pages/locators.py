@@ -171,7 +171,7 @@ class ProfilePageLocators:
                              "LinkButton_sizeSmall__Leg3Q']"
     LOG_OUT_BUTTON = "//a[@class='LinkButton_link___jzSK LinkButton_colorWhiteWithBorderAqua__S7MfE " \
                      "LinkButton_sizeSmall__Leg3Q']"
-    MAKE_NEW_ORDER_BUTTON = "//a[@class='ButtonAddOrLink_wrapper__3G1F7 ButtonAddOrLink_typeImgSmall__CRumQ']"
+    MAKE_NEW_ORDER_BUTTON = (By.XPATH, "//a[@class='ButtonAddOrLink_wrapper__3G1F7 ButtonAddOrLink_typeImgSmall__CRumQ']")
 
     SWIPE_NAVIGATION_BUTTON_RIGHT = "//button[@class='SwiperNavigation_btn__zZaKt SwiperNavigation_btnRight__yBkxG']"
     SWIPE_NAVIGATION_BUTTON_LEFT = "//button[@class='SwiperNavigation_btn__zZaKt']"
@@ -181,7 +181,7 @@ class ProfilePageLocators:
 
 
 class ChangePasswordLocators:
-    CHANGE_PASSWORD_TITLE = "//h1[@class='ChangePassword_title__oV8hO']"
+    CHANGE_PASSWORD_TITLE = (By.XPATH, "//h1[@class='ChangePassword_title__oV8hO']")
     OLD_PASSWORD_TEXT_FIELD_HEADER = "//label[contains(text(), 'Old password')]"
     NEW_PASSWORD_TEXT_FIELD_HEADER = "//label[contains(text(), 'New password')]"
     CONFIRM_PASSWORD_TEXT_FIELD_HEADER = "//label[contains(text(), 'Confirm password')]"

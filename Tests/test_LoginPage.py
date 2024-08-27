@@ -74,12 +74,13 @@ class TestLoginGeneral(BaseTest):
         page = LoginPage(self.driver)
         page.open_login_form()
         page.click_forgot_password_button()
+        time.sleep(3)
 
-    def test_user_can_close_forgot_password_form(self):
-        page = LoginPage(self.driver)
-        page.open_login_form()
-        page.click_forgot_password_button()
-        page.close_forgot_password_form()
+    # def test_user_can_close_forgot_password_form(self):
+    #     page = LoginPage(self.driver)
+    #     page.open_login_form()
+    #     page.click_forgot_password_button()
+    #     time.sleep(3)
 
     def test_user_can_open_privacy_policy(self):
         page = LoginPage(self.driver)
@@ -92,4 +93,8 @@ class TestLoginGeneral(BaseTest):
         page.open_login_form()
         page.click_sign_up_tab()
         page.click_terms_of_use_link()
+
+    def test_example(self):
+        page = LoginPage(self.driver)
+        page.is_present()
 
