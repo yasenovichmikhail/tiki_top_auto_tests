@@ -66,7 +66,19 @@ class HomePageLocators:
 
 
 class PricingPageLocators:
-    pass
+    MAKE_YOUR_ORDER_CONTAINER = (By.XPATH, "//section[@class='container MakeOrder_container__Fm6zj']")
+    MAKE_YOUR_ORDER_HEADER = (By.XPATH, "//h2[@class='MakeOrder_title__t4vgt']")
+    CHOOSE_TYPE_OF_ACTIONS_CONTAINER = (By.XPATH, "//div[@class='MakeOrder_wrapper__Dd3NN']")
+    CHOOSE_TYPE_OF_ACTIONS_HEADER = (By.XPATH, "//h4[@class='MainChooseTypeOrder_descriptionTitle__UPWz_']")
+    LIKES_BUTTON = (By.XPATH, "//span[contains(text(), 'likes')]")
+    VIEWS_BUTTON = (By.XPATH, "//span[contains(text(), 'views')]")
+    FOLLOWERS_BUTTON = (By.XPATH, "//span[contains(text(), 'followers')]")
+    COMMENTS_BUTTON = (By.XPATH, "//span[contains(text(), 'comments')]")
+    REPOSTS_BUTTON = (By.XPATH, "//span[contains(text(), 'reposts')]")
+    INCREASE_NUMBER_BUTTON = (By.XPATH, "//button[@class='InputAction_btn__dXoge InputAction_decrement__XHKdM']")
+    DECREASE_NUMBER_BUTTON = (By.XPATH, "//button[@class='InputAction_btn__dXoge InputAction_increment__vZs7X']")
+    INPUT_NUMBER_FIELD = (By.XPATH, "//input[@class='InputAction_input__XO83h']")
+
 
 
 class FaqPageLocators:
