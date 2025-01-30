@@ -46,7 +46,7 @@ class TestPricingPage(BaseTest):
         page.choose_reposts()
         time.sleep(1)
 
-    def test_user_can_decrease_number_of_action(self):
+    def test_user_can_increase_number_of_action(self):
         page = PricingPage(self.driver)
         page.go_to_pricing_page_from_header_link()
         page.choose_views()

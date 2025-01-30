@@ -74,7 +74,6 @@ class TestLoginGeneral(BaseTest):
         page = LoginPage(self.driver)
         page.open_login_form()
         page.click_forgot_password_button()
-        time.sleep(3)
 
     # def test_user_can_close_forgot_password_form(self):
     #     page = LoginPage(self.driver)

@@ -80,7 +80,6 @@ class PricingPageLocators:
     INPUT_NUMBER_FIELD = (By.XPATH, "//input[@class='InputAction_input__XO83h']")
 
 
-
 class FaqPageLocators:
     POPULAR_QUESTIONS_CONTAINER = (By.XPATH, "//div[@class='FaqInfo_questionsContainer__20GJ_']")
     POPULAR_QUESTIONS_HEADER = (By.XPATH, "//h1[@class='FaqInfo_title__qU5w9']")
